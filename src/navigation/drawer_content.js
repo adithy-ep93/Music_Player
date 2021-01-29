@@ -43,7 +43,7 @@ const CustomDrawerContent = ({ navigation, ...props }) => {
                             size={size}
                             color={'#fff'} />)}
                         label="Scan Library"
-                        onPress={() => navigation.navigate('Guidlines')}
+                        onPress={() => navigation.navigate('Scan')}
                     />
                     <Divider style={{ width: '80%', marginHorizontal: 20 }} />
                     <DrawerItem
@@ -131,7 +131,7 @@ const CustomDrawerContent = ({ navigation, ...props }) => {
                                     size={size}
                                     color={'#fff'} />
                         )}
-                        label="Settings" onPress={() => null} />
+                        label="Settings" onPress={() => navigation.navigate('Settings')} />
                     <Divider style={{ width: '80%', marginHorizontal: 20 }} />
                     
                     <View style={{ height: 40 }}></View>
