@@ -1,11 +1,18 @@
-import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import Colors from './src/config/colors';
-import MainNavigation from './src/navigation/main_navigation';
+import React, { useEffect } from 'react';
+import Recentplay from './src/screens/Recentplay';
+import Mostplay from './src/screens/Mostplay';
+import Defaultlist from './src/screens/Defaultlist';
 
 const App = () => {
-  return (<MainNavigation/>);
+  
+  return (
+    < Defaultlist />
+   
+
+  );
 };
 
 
 export default App;
+
+
