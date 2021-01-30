@@ -64,7 +64,7 @@ const Folder = () => {
               <TouchableOpacity  activeOpacity={0.8} style={styles.newIconContainer}  >
               <Image
                 style={styles.circle}
-                source={require('../../assests/music/shuffle.jpg')}/>
+                source={require('../../assets/music/shuffle.jpg')}/>
                 </TouchableOpacity></View>
 
         </View>

@@ -2,8 +2,7 @@ import * as React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 
-import Home from '../screens/home';
-import Colors from '../config/colors';
+import HomeStackNavigation from '../navigation/homestack';
 import Scan from '../screens/Scan/scan_library';
 import HomePage from '../screens/Home/home_page';
 import Settings from '../screens/Settings/settings';
@@ -24,7 +23,7 @@ export default function MainNavigation() {
                 }}
                 drawerContent={props => <CustomDrawerContent {...props} />}
             >
-                <Drawer.Screen name="Home" component={HomePage} />
+                <Drawer.Screen name="Home" component={HomeStackNavigation} />
                 <Drawer.Screen name="Scan" component={Scan} />
                 <Drawer.Screen name="Settings" component={Settings} />
                 {/* <Drawer.Screen name="Guidlines" component={Guidlines} /> */}

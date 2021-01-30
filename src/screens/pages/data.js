@@ -5,92 +5,92 @@ export default class UserData {
             name: '| wapMallu.com|- Anuragam M',
             message: '| WapMallu.Com|',
             
-            image: require('../../assests/music/music.jpeg')
+            image: require('../../assets/music/music.jpeg')
         },
         {
             id: 2,
             name: 'AUD-2448524587-WA0037',
             message: '<unknown>',
             
-            image: require('../../assests/music/logo.jpg')
+            image: require('../../assets/music/logo.jpg')
         },
         {
             id: 3,
             name: 'AUD-65488878-WA0072',
             message: '<unknown>',
-            image: require('../../assests/music/music.jpeg')
+            image: require('../../assets/music/music.jpeg')
         },
         {
             id: 4,
             name: 'AUD-65488878-WA0072',
             message: '<unknown>',
-            image: require('../../assests/music/logo.jpg')
+            image: require('../../assets/music/logo.jpg')
         },
         {
             id: 5,
             name: 'AUD-65488878-WA0072',
             message: '<unknown>',
-            image: require('../../assests/music/musiclogo.jpeg')
+            image: require('../../assets/musiclogo.jpeg')
         },
         {
             id: 6,
             name: 'AUD-65488878-WA0072',
             message: '<unknown>',
-            image: require('../../assests/music/download.png')
+            image: require('../../assets/music/download.png')
         },
         {
             id: 7,
             name: 'AUD-65488878-WA0072',
             message: '<unknown>',
-            image: require('../../assests/music/logo.jpg')
+            image: require('../../assets/music/logo.jpg')
         },
         {
             id: 8,
             name: 'AUD-65488878-WA0072',
             message: '<unknown>',
-            image: require('../../assests/music/musiclogo.jpeg')
+            image: require('../../assets/music/musiclogo.jpeg')
         },
         {
             id: 9,
             name: 'AUD-65488878-WA0072',
             message: '<unknown>',
-            image: require('../../assests/music/download.png')
+            image: require('../../assets/music/download.png')
         },
         {
             id: 10,
             name: 'AUD-65488878-WA0072',
             message: '<unknown>',
-            image: require('../../assests/music/musiclogo.jpeg')
+            image: require('../../assets/music/musiclogo.jpeg')
         },
         {
             id: 11,
             name: 'AUD-65488878-WA0072',
             message: '<unknown>',
-            image: require('../../assests/music/download.png')
+            image: require('../../assets/music/download.png')
         },
         {
             id: 12,
             name: 'AUD-65488878-WA0072',
             message: '<unknown>',
-            image: require('../../assests/music/musiclogo.jpeg')
+            image: require('../../assets/music/musiclogo.jpeg')
         },
         {
             id: 13,
             name: 'AUD-65488878-WA0072',
             message: '<unknown>',
-            image: require('../../assests/music/download.png')
+            image: require('../../assets/music/download.png')
         },
         {
             id: 14,
             name: 'AUD-65488878-WA0072',
             message: '<unknown>',
-            image: require('../../assests/music/logo.jpg')
+            image: require('../../assets/music/logo.jpg')
         },
         {
             id: 15,
             name: 'AUD-65488878-WA0072',
             message: '<unknown>',
-            image: require('../../assests/music/download.png')
+            image: require('../../assets/music/download.png')
         },
 
     ]
@@ -101,14 +101,14 @@ Folder = [
             name: 'Download',
             message: '/storage/0/Download',
             song: '10 songs',
-            image: require('../../assests/music/folder.png')
+            image: require('../../assets/music/folder.png')
         },
         {
             id: 2,
             name: 'Music',
             message: '/storage/0/Music',
             song: '1 songs',
-            image: require('../../assests/music/folder.png')
+            image: require('../../assets/music/folder.png')
         },
        
         {
@@ -116,14 +116,14 @@ Folder = [
             name: 'Sound',
             message: '/storage/0/Sound',
             song: '6 songs',
-            image: require('../../assests/music/folder.png')
+            image: require('../../assets/music/folder.png')
         },
         {
             id: 4,
             name: 'WhatsAppAudio',
             message: '/storage/0/WhatsApp',
             song:'5 songs',
-            image: require('../../assests/music/folder.png')
+            image: require('../../assets/music/folder.png')
         },
 ]
 
@@ -132,61 +132,61 @@ Download = [
             id: 1,
             name: 'AUD-2448524587-WA0056',
             message: '| WapMallu.Com|',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 2,
             name: 'AUD-2448524587-WA00178',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 3,
             name: 'The Moments Im Missing',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 4,
             name: 'AUD-65488878-WA0085',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 5,
             name: 'Kgf malayalam',
             message: 'BHADRA BOYS',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 6,
             name: 'AUD-65488878-WA0015',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 7,
             name: 'AUD-65488878-WA0089',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 8,
             name: 'AUD-65488878-WA0025',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 9,
             name: 'AUD-65488878-WA0036',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id:10 ,
             name: 'AUD-65488878-WA0036',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
        ]
 
@@ -196,31 +196,31 @@ Download = [
             id: 1,
             name: 'AUD-2448524587-WA0056',
             message: '| WapMallu.Com|',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 2,
             name: 'AUD-2448524587-WA00178',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 3,
             name: 'The Moments Im Missing',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 4,
             name: 'AUD-65488878-WA0085',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 5,
             name: 'Kgf malayalam whatsapp',
             message: 'BHADRA BOYS',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         
        
@@ -239,91 +239,91 @@ RecentAdd = [
             name: 'AUD-2448524587-WA0056',
             message: '| WapMallu.Com|',
             
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 2,
             name: 'AUD-2448524587-WA00178',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 3,
             name: 'The Moments Im Missing',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 4,
             name: 'AUD-65488878-WA0085',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 5,
             name: 'Kgf malayalam',
             message: 'BHADRA BOYS',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 6,
             name: 'AUD-65488878-WA0015',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 7,
             name: 'AUD-65488878-WA0089',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 8,
             name: 'AUD-65488878-WA0025',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 9,
             name: 'AUD-65488878-WA0036',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 10,
             name: 'AUD-65488878-WA0078',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 11,
             name: 'AUD-65488878-WA0065',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 12,
             name: 'AUD-65488878-WA0098',
             message: '<unknown>',
-              image: require('../../assests/music/iconlogo.jpg')
+              image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 13,
             name: 'AUD-65698428-WA0078',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 14,
             name: 'AUD-65411578-WA0033',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
         {
             id: 15,
             name: 'AUD-65893878-WA0012',
             message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
+            image: require('../../assets/music/iconlogo.jpg')
         },
 
     ]

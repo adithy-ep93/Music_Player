@@ -45,7 +45,7 @@ const HomePage = ({ navigation }) => {
             <ScrollView>
                 <View style={styles.content}>
                     <View style={styles.itemBox}>
-                        <TouchableOpacity style={styles.folders}>
+                        <TouchableOpacity style={styles.folders} onPress={() => navigation.navigate("Library")}>
                             <View>
                                 <Text style={styles.count}>19</Text>
                                 <View style={styles.icon}>
@@ -54,7 +54,7 @@ const HomePage = ({ navigation }) => {
                                 </View>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.folders}>
+                        <TouchableOpacity style={styles.folders} onPress={() => navigation.navigate("Folder")}>
                             <View>
                                 <Text style={styles.count}>5</Text>
                                 <View style={styles.icon}>
@@ -63,7 +63,7 @@ const HomePage = ({ navigation }) => {
                                 </View>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.folders}>
+                        <TouchableOpacity style={styles.folders} onPress={() => navigation.navigate("Favorites")}>
                             <View>
                                 <Text style={styles.count}>3</Text>
                                 <View style={styles.icon}>
@@ -74,7 +74,7 @@ const HomePage = ({ navigation }) => {
                         </TouchableOpacity>
                     </View>
                     <View style={styles.itemBox}>
-                        <TouchableOpacity style={styles.folders}>
+                        <TouchableOpacity style={styles.folders} onPress={() => navigation.navigate("Recentplay")}>
                             <View>
                                 <Text style={styles.count}>6</Text>
                                 <View style={styles.icon}>
@@ -87,7 +87,7 @@ const HomePage = ({ navigation }) => {
                                 </View>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.folders}>
+                        <TouchableOpacity style={styles.folders} onPress={() => navigation.navigate("RecentAdd")}>
                             <View>
                                 <Text style={styles.count}>0</Text>
                                 <View style={styles.icon}>
@@ -100,7 +100,7 @@ const HomePage = ({ navigation }) => {
                                 </View>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.folders}>
+                        <TouchableOpacity style={styles.folders} onPress={() => navigation.navigate("Mostplay")}>
                             <View>
                                 <Text style={styles.count}>9</Text>
                                 <View style={styles.icon}>
@@ -127,7 +127,7 @@ const HomePage = ({ navigation }) => {
                         </View>
                     </View>
                     <View style={styles.itemBox1}>
-                        <TouchableOpacity style={styles.folders}>
+                        <TouchableOpacity style={styles.folders} onPress={() => navigation.navigate("Defaultlist")}>
                             <View>
                                 <Text style={styles.count}>19</Text>
                                 <View style={styles.icon}>
@@ -197,7 +197,7 @@ const HomePage = ({ navigation }) => {
                 </View>
             </Modal>
 
-            
+
 
             {/* PlaylistModal */}
             <View  >
@@ -223,7 +223,7 @@ const HomePage = ({ navigation }) => {
                                         color={'#fff'} />
                                 </TouchableOpacity>
                             </View>
-                            <View style={{ justifyContent: 'center', width: '50%', height: '100%', paddingLeft: 10 }}><Text style={{ fontSize: 25, color: '#fff' }}>Music Player</Text></View>
+                            <View style={{ justifyContent: 'center', width: '50%', height: '100%', paddingLeft: 5 }}><Text style={{ fontSize: 25, color: '#fff' }}>Default List</Text></View>
                             <View style={{ width: '45%', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', height: '100%', paddingHorizontal: 10, }}>
                                 <TouchableOpacity>
                                     <MaterialCommunityIcons
@@ -237,44 +237,39 @@ const HomePage = ({ navigation }) => {
                                         size={25}
                                         color={'#fff'} />
                                 </TouchableOpacity>
-                                <TouchableOpacity onPress={()=> setOptionModalVisible(true)}>
+                                <TouchableOpacity onPress={() => setOptionModalVisible(true)}>
                                     <SimpleLineIcons style={styles.optionButton} name="options-vertical" size={16} color="#fff" />
                                 </TouchableOpacity>
                             </View>
-                             {/* optionModal */}
-             <Modal
-            isVisible={optionModalVisible}
-            style={{ margin: 0 }}
-            backdropOpacity={0.3}
-            animationIn={'fadeIn'}
-            animationOut={'fadeOut'}
-            onBackdropPress={() => setOptionModalVisible(false)}
-            onBackButtonPress={() => setOptionModalVisible(false)}>
-                <View style={styles.optionmodal}>
-                    <TouchableOpacity style={styles.options}>
-                        <Text style={styles.text}>Edit</Text>
-                    </TouchableOpacity >
-                    <TouchableOpacity style={styles.options}>
-                        <Text style={styles.text}>New playlist</Text>
-                    </TouchableOpacity >
-                    <TouchableOpacity style={styles.options}>
-                        <Text style={styles.text}>Backup list</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.options}>
-                        <Text style={styles.text}>Recovery list</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.options}>
-                        <Text style={styles.text}>Delete empty</Text>
-                    </TouchableOpacity>
-                    
-
-                </View>
-
-            </Modal>
+                            {/* optionModal */}
+                            <Modal
+                                isVisible={optionModalVisible}
+                                style={{ margin: 0 }}
+                                backdropOpacity={0.3}
+                                animationIn={'fadeIn'}
+                                animationOut={'fadeOut'}
+                                onBackdropPress={() => setOptionModalVisible(false)}
+                                onBackButtonPress={() => setOptionModalVisible(false)}>
+                                <View style={styles.optionmodal}>
+                                    <TouchableOpacity style={styles.options}>
+                                        <Text style={styles.text}>Edit</Text>
+                                    </TouchableOpacity >
+                                    <TouchableOpacity style={styles.options}>
+                                        <Text style={styles.text}>New playlist</Text>
+                                    </TouchableOpacity >
+                                    <TouchableOpacity style={styles.options}>
+                                        <Text style={styles.text}>Backup list</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.options}>
+                                        <Text style={styles.text}>Recovery list</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.options}>
+                                        <Text style={styles.text}>Delete empty</Text>
+                                    </TouchableOpacity>
+                                </View>
+                            </Modal>
                         </View>
                         <PlayList />
-
-
                     </View>
                 </Modal>
             </View>
@@ -297,7 +292,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         flexDirection: 'row',
         elevation: 5,
-        backgroundColor:Colors.primary
+        backgroundColor: Colors.primary
     },
     headerTitle: {
         flexDirection: 'row',
@@ -307,7 +302,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
     },
     headIcons: {
-        width: '30%',
+        width: '35%',
         height: '100%',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -437,24 +432,24 @@ const styles = StyleSheet.create({
         width: '100%'
 
     },
-    optionmodal:{
-        width:'50%',
-        height:'35%',
-       
-        
-        position:'absolute',
-        right:5,
-        backgroundColor:'#fff',
-        top:10,
-        borderRadius:2
+    optionmodal: {
+        width: '50%',
+        height: '35%',
+
+
+        position: 'absolute',
+        right: 5,
+        backgroundColor: '#fff',
+        top: 10,
+        borderRadius: 2
 
     },
-    options:{
-        width:'100%',
-        padding:10,
-        alignItems:'flex-start'
-       },
-       text:{
-           fontSize:18,
-       }
+    options: {
+        width: '100%',
+        padding: 10,
+        alignItems: 'flex-start'
+    },
+    text: {
+        fontSize: 18,
+    }
 });
