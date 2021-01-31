@@ -24,7 +24,6 @@ const Library = () => {
         name={item.name}
         subname={item.message}
        
-        // onPress={() => navigation.navigate('Chat Screen', { name: item.name, lastseen: item.lastseen })}
     />
 );
 
@@ -36,15 +35,15 @@ const Library = () => {
 
             {/*Header */}
         <View style={styles.headerContainer}>
-           
-              <MaterialIcons name="arrow-back" size={20} color="#fff"/>
+          <TouchableOpacity>
+           <MaterialIcons name="arrow-back" size={20} color="#fff"/></TouchableOpacity>
             <View style={styles.innerContainer}>
                 <View style={styles.nameContainer}>
                   <Text style={styles.headerHeading} >Library</Text></View>
             </View>
-             <MaterialIcons name="card-giftcard" size={20} color="#fff"/>
-             <FontAwesome name="search" size={20} color="#fff"/>
-             <Entypo name="dots-three-vertical" size={20} color="#fff" style={{marginRight:16}}/>
+            <TouchableOpacity><MaterialIcons name="card-giftcard" size={20} color="#fff"/></TouchableOpacity>
+             <TouchableOpacity><FontAwesome name="search" size={20} color="#fff"/></TouchableOpacity>
+             <TouchableOpacity><Entypo name="dots-three-vertical" size={20} color="#fff" style={{marginRight:16}}/></TouchableOpacity>
         </View>
               {/*TAB */}
         <View style={{backgroundColor:'#4682B4',flexDirection:'row', justifyContent:'space-evenly',marginVertical:15}}>
@@ -64,8 +63,15 @@ const Library = () => {
               </TouchableOpacity>
               <TouchableOpacity  onPress={() => navigation.navigate('RecentAdd')} 
                 style={styles.button}>
-                <Text style={styles.tab}>RECENT ADD</Text>
+              <Text style={styles.tab}>RecentAdd</Text>
               </TouchableOpacity>
+              
+              <TouchableOpacity  onPress={() => navigation.navigate('Settings')} 
+                style={styles.button}>
+              <Text style={styles.tab}>SETTINGS</Text>
+              </TouchableOpacity>
+              
+              
       </View>
 
               
@@ -108,6 +114,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     height: 55,
+    // backgroundColor: colors.primary,
     backgroundColor:'#4682B4',
     alignItems: 'center',
     justifyContent: 'space-between',

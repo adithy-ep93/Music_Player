@@ -5,17 +5,15 @@ import { useNavigation } from '@react-navigation/native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
-
 import ContactTile from '../../../components/contactTile';
-
 import UserData from '../data';
 import { ScrollView } from 'react-native-gesture-handler';
 
 const USERS = new UserData();
-const Download_item = USERS.Download;
+const WhatsApp_item = USERS.WhatsApp;
 
 
-const Download = () => {
+const WhatsApp = () => {
 
   const navigation = useNavigation();
   const renderItem = ({ item }) => (
@@ -39,11 +37,10 @@ const Download = () => {
                 <MaterialIcons name="arrow-back" size={20} color="#fff"/></TouchableOpacity>
                 <View style={styles.innerContainer}>
                     <View style={styles.nameContainer}>
-                    <Text style={styles.headerHeading} >Download</Text></View></View>
+                    <Text style={styles.headerHeading}>WhatsAppAudio</Text></View></View>
                     <MaterialIcons name="card-giftcard" size={20} color="#fff"/>
                 <TouchableOpacity><FontAwesome name="search" size={20} color="#fff"/></TouchableOpacity>
                 <TouchableOpacity><Entypo name="dots-three-vertical" size={20} color="#fff" style={{marginRight:16}}/></TouchableOpacity>
-                
               </View>
              </View> 
      
@@ -53,7 +50,7 @@ const Download = () => {
         {/* body */}
         <View>
             <FlatList
-                    data={Download_item}
+                    data={WhatsApp_item}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={renderItem}
                     showsVerticalScrollIndicator={false}
@@ -62,13 +59,12 @@ const Download = () => {
                  
 
                    {/* NewButton */}
-                   <View style={{marginVertical:80}}>
+              <View style={{marginVertical:150}}>
               <TouchableOpacity  activeOpacity={0.8} style={styles.newIconContainer}  >
               <Image
                 style={styles.circle}
                 source={require('../../../assests/music/shuffle.jpg')}/>
                 </TouchableOpacity></View>
-
 
         </View>
 
@@ -83,7 +79,7 @@ const Download = () => {
   )
 };
 
-export default Download;
+export default WhatsApp;
 
 const styles = StyleSheet.create({
   headerContainer: {
@@ -131,6 +127,6 @@ const styles = StyleSheet.create({
             width: 50,
             height: 50,
             borderRadius: 50 / 1,
-      },
-     
+            
+        }
 });

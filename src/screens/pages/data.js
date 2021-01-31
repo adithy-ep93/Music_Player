@@ -30,7 +30,7 @@ export default class UserData {
             id: 5,
             name: 'AUD-65488878-WA0072',
             message: '<unknown>',
-            image: require('../../assests/music/musiclogo.jpeg')
+            image: require('../../assests/music/logo.jpg')
         },
         {
             id: 6,
@@ -48,7 +48,7 @@ export default class UserData {
             id: 8,
             name: 'AUD-65488878-WA0072',
             message: '<unknown>',
-            image: require('../../assests/music/musiclogo.jpeg')
+            image: require('../../assests/music/logo.jpg')
         },
         {
             id: 9,
@@ -60,7 +60,7 @@ export default class UserData {
             id: 10,
             name: 'AUD-65488878-WA0072',
             message: '<unknown>',
-            image: require('../../assests/music/musiclogo.jpeg')
+            image: require('../../assests/music/logo.jpg')
         },
         {
             id: 11,
@@ -72,7 +72,7 @@ export default class UserData {
             id: 12,
             name: 'AUD-65488878-WA0072',
             message: '<unknown>',
-            image: require('../../assests/music/musiclogo.jpeg')
+            image: require('../../assests/music/logo.jpg')
         },
         {
             id: 13,
@@ -91,43 +91,12 @@ export default class UserData {
             name: 'AUD-65488878-WA0072',
             message: '<unknown>',
             image: require('../../assests/music/download.png')
+            
         },
 
     ]
-
-Folder = [
-        {
-            id: 1,
-            name: 'Download',
-            message: '/storage/0/Download',
-            song: '10 songs',
-            image: require('../../assests/music/folder.png')
-        },
-        {
-            id: 2,
-            name: 'Music',
-            message: '/storage/0/Music',
-            song: '1 songs',
-            image: require('../../assests/music/folder.png')
-        },
-       
-        {
-            id: 3,
-            name: 'Sound',
-            message: '/storage/0/Sound',
-            song: '6 songs',
-            image: require('../../assests/music/folder.png')
-        },
-        {
-            id: 4,
-            name: 'WhatsAppAudio',
-            message: '/storage/0/WhatsApp',
-            song:'5 songs',
-            image: require('../../assests/music/folder.png')
-        },
-]
-
-Download = [
+    
+    Download = [
         {
             id: 1,
             name: 'AUD-2448524587-WA0056',
@@ -158,37 +127,63 @@ Download = [
             message: 'BHADRA BOYS',
             image: require('../../assests/music/iconlogo.jpg')
         },
-        {
-            id: 6,
-            name: 'AUD-65488878-WA0015',
-            message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
-        },
-        {
-            id: 7,
-            name: 'AUD-65488878-WA0089',
-            message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
-        },
-        {
-            id: 8,
-            name: 'AUD-65488878-WA0025',
-            message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
-        },
-        {
-            id: 9,
-            name: 'AUD-65488878-WA0036',
-            message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
-        },
-        {
-            id:10 ,
-            name: 'AUD-65488878-WA0036',
-            message: '<unknown>',
-            image: require('../../assests/music/iconlogo.jpg')
-        },
+        
        ]
+
+Music =[
+
+    {
+        id: 1,
+            name: 'Magic Mullet',
+            message: 'Music Beyound Library',
+            image: require('../../assests/music/iconlogo.jpg')
+    }
+]
+
+     
+Sound = [
+    {
+        id: 1,
+        name: 'AUD-2448524587-WA0056',
+        message: '| WapMallu.Com|',
+        image: require('../../assests/music/iconlogo.jpg')
+    },
+    {
+        id: 2,
+        name: 'AUD-2448524587-WA00178',
+        message: '<unknown>',
+        image: require('../../assests/music/iconlogo.jpg')
+    },
+    {
+        id: 3,
+        name: 'The Moments Im Missing',
+        message: '<unknown>',
+        image: require('../../assests/music/iconlogo.jpg')
+    },
+    {
+        id: 4,
+        name: 'AUD-65488878-WA0085',
+        message: '<unknown>',
+        image: require('../../assests/music/iconlogo.jpg')
+    },
+    {
+        id: 5,
+        name: 'Kgf malayalam whatsapp',
+        message: 'BHADRA BOYS',
+        image: require('../../assests/music/iconlogo.jpg')
+    },
+    {
+        id: 6,
+        name: 'AUD-65488878-WA0085',
+        message: '<unknown>',
+        image: require('../../assests/music/iconlogo.jpg')
+    },
+    
+   
+    
+]   
+
+
 
        
     WhatsApp = [

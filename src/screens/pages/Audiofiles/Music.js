@@ -12,10 +12,10 @@ import UserData from '../data';
 import { ScrollView } from 'react-native-gesture-handler';
 
 const USERS = new UserData();
-const Download_item = USERS.Download;
+const Music_item = USERS.Music;
 
 
-const Download = () => {
+const Music = () => {
 
   const navigation = useNavigation();
   const renderItem = ({ item }) => (
@@ -39,11 +39,10 @@ const Download = () => {
                 <MaterialIcons name="arrow-back" size={20} color="#fff"/></TouchableOpacity>
                 <View style={styles.innerContainer}>
                     <View style={styles.nameContainer}>
-                    <Text style={styles.headerHeading} >Download</Text></View></View>
+                    <Text style={styles.headerHeading}>Music</Text></View></View>
                     <MaterialIcons name="card-giftcard" size={20} color="#fff"/>
-                <TouchableOpacity><FontAwesome name="search" size={20} color="#fff"/></TouchableOpacity>
-                <TouchableOpacity><Entypo name="dots-three-vertical" size={20} color="#fff" style={{marginRight:16}}/></TouchableOpacity>
-                
+                  <TouchableOpacity><FontAwesome name="search" size={20} color="#fff"/></TouchableOpacity>
+                    <TouchableOpacity><Entypo name="dots-three-vertical" size={20} color="#fff" style={{marginRight:16}}/></TouchableOpacity>
               </View>
              </View> 
      
@@ -53,7 +52,7 @@ const Download = () => {
         {/* body */}
         <View>
             <FlatList
-                    data={Download_item}
+                    data={Music_item}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={renderItem}
                     showsVerticalScrollIndicator={false}
@@ -62,13 +61,12 @@ const Download = () => {
                  
 
                    {/* NewButton */}
-                   <View style={{marginVertical:80}}>
+              <View style={{marginVertical:450}}>
               <TouchableOpacity  activeOpacity={0.8} style={styles.newIconContainer}  >
               <Image
                 style={styles.circle}
                 source={require('../../../assests/music/shuffle.jpg')}/>
                 </TouchableOpacity></View>
-
 
         </View>
 
@@ -83,7 +81,7 @@ const Download = () => {
   )
 };
 
-export default Download;
+export default Music;
 
 const styles = StyleSheet.create({
   headerContainer: {
@@ -131,6 +129,6 @@ const styles = StyleSheet.create({
             width: 50,
             height: 50,
             borderRadius: 50 / 1,
-      },
-     
+            
+        }
 });

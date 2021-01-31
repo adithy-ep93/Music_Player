@@ -25,7 +25,7 @@ const Library = () => {
         name={item.name}
         subname={item.message}
        
-        // onPress={() => navigation.navigate('Chat Screen', { name: item.name, lastseen: item.lastseen })}
+       
     />
 );
 
@@ -43,11 +43,15 @@ const Library = () => {
                 <View style={styles.nameContainer}>
                   <Text style={styles.headerHeading}>RECENT ADD</Text></View>
             </View>
-             <MaterialIcons name="card-giftcard" size={20} color="#fff"/>
-             <FontAwesome name="search" size={20} color="#fff"/>
-             <Entypo name="dots-three-vertical" size={20} color="#fff" style={{marginRight:16}}/>
+                <MaterialIcons name="card-giftcard" size={20} color="#fff"/>
+                <FontAwesome name="search" size={20} color="#fff"/>
+                <Entypo name="dots-three-vertical" size={20} color="#fff" style={{marginRight:16}}/>
         </View>
-               {/* body */}
+        
+
+
+
+        
       
             <FlatList
                 data={Recent_item}
