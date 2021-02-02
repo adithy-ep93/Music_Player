@@ -8,6 +8,7 @@ import playlistData from "../components/data.json";
 import Modal from 'react-native-modal';
 import Colors from '../config/colors';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const DATA = require('../components/data.json');
 
@@ -69,30 +70,30 @@ const trackPlayerInit = async () => {
 const Item = ({ item, onPress, style }) => (
     <TouchableOpacity onPress={onPress} style={[styles.item, style]}>
         <SimpleLineIcons
-                                    name="options-vertical"
-                                    size={15}
-                                    color={'#fff'} />
-                                    <SimpleLineIcons
-                                    name="options-vertical"
-                                    size={15}
-                                    color={'#fff'} />
-        <View style={{width:'60%'}}>
-        <Text style={styles.title}>{item.title}</Text>
+            name="options-vertical"
+            size={15}
+            color={'#fff'} />
+        <SimpleLineIcons
+            name="options-vertical"
+            size={15}
+            color={'#fff'} />
+        <View style={{ width: '60%' }}>
+            <Text style={styles.title}>{item.title}</Text>
         </View>
-       <TouchableOpacity>
-       <EvilIcons
-                                    name="heart"
-                                    size={25}
-                                    color={'#fff'} 
-                                    style={{paddingHorizontal:10}}/>
-       </TouchableOpacity>
-                                   <TouchableOpacity>
-                                   <EvilIcons
-                                    name="close"
-                                    size={25}
-                                    color={'#fff'} 
-                                    style={{paddingHorizontal:10}}/>
-                                   </TouchableOpacity>
+        <TouchableOpacity>
+            <EvilIcons
+                name="heart"
+                size={25}
+                color={'#fff'}
+                style={{ paddingHorizontal: 10 }} />
+        </TouchableOpacity>
+        <TouchableOpacity>
+            <EvilIcons
+                name="close"
+                size={25}
+                color={'#fff'}
+                style={{ paddingHorizontal: 10 }} />
+        </TouchableOpacity>
     </TouchableOpacity>
 );
 
@@ -101,6 +102,7 @@ const Item = ({ item, onPress, style }) => (
 const Music = () => {
     const [isModalVisible, setModalVisible] = useState(false);
     const [selectedId, setSelectedId] = useState(null);
+    const [addPlaylistModalVisible, setAddPlaylistModalVisible] = useState(false);
 
     const renderItem = ({ item }) => {
         return (
@@ -195,9 +197,9 @@ const Music = () => {
                     minimumValue={0}
                     maximumValue={1}
                     value={sliderValue}
-                    minimumTrackTintColor="pink"
+                    minimumTrackTintColor={Colors.secondary}
                     maximumTrackTintColor="#000000"
-                    thumbTintColor='pink'
+                    thumbTintColor={Colors.secondary}
                     onSlidingStart={slidingStarted}
                     onSlidingComplete={slidingCompleted}
                 />
@@ -273,7 +275,7 @@ const Music = () => {
                             <Text style={{ fontSize: 18, color: '#fff' }}>Single</Text>
                         </View>
                         <View style={styles.headIcons}>
-                            <TouchableOpacity onPress={() => null}>
+                            <TouchableOpacity onPress={() => setAddPlaylistModalVisible(true)}>
                                 <MaterialIcons
                                     name="add-box"
                                     size={30}
@@ -295,16 +297,48 @@ const Music = () => {
                                 renderItem={renderItem}
                                 keyExtractor={(item) => item.id}
                                 extraData={selectedId}
-                                
+
                             />
-                            <TouchableOpacity onPress={()=> setModalVisible(false)}>
-                            <Text style={{alignSelf:'center', color:'#fff', fontSize:18, padding:10}}>Close</Text>
+                            <TouchableOpacity onPress={() => setModalVisible(false)}>
+                                <Text style={{ alignSelf: 'center', color: '#fff', fontSize: 18, padding: 10 }}>Close</Text>
                             </TouchableOpacity>
                         </View>
                     </ScrollView>
 
                 </View>
             </Modal>
+
+            {/* SideaddplaylistModal */}
+            <View>
+                <Modal
+                    isVisible={addPlaylistModalVisible}
+                    style={{ margin: 0 }}
+                    backdropOpacity={0.3}
+                    animationIn={'slideInRight'}
+                    animationOut={'slideOutRight'}
+                    onBackdropPress={() => setAddPlaylistModalVisible(false)}
+                    onBackButtonPress={() => setAddPlaylistModalVisible(false)}
+                >
+                    <View style={styles.sideAddModal}>
+                        <View style={styles.header}>
+                            <View style={{ alignItems: 'center', justifyContent: 'center', height: '100%', paddingRight: 10 }}>
+                                <TouchableOpacity onPress={() => setAddPlaylistModalVisible(false)}>
+                                    <MaterialIcons
+                                        name="arrow-back"
+                                        size={25}
+                                        color={'#fff'} />
+                                </TouchableOpacity>
+                            </View>
+                            <View style={{ justifyContent: 'center', width: '50%', height: '100%', paddingLeft: 5 }}><Text style={{ fontSize: 25, color: '#fff' }}>Add to playlist</Text></View>
+                            <View style={{ width: '45%', alignItems: 'center', justifyContent: 'flex-end', flexDirection: 'row', height: '100%', paddingHorizontal: 10, }}>
+                                <TouchableOpacity onPress={() => null}>
+                                    <Ionicons style={styles.optionButton} name="add" size={26} color="#fff" />
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    </View>
+                </Modal>
+            </View>
         </View>
     );
 }
@@ -314,7 +348,7 @@ export default Music;
 const styles = StyleSheet.create({
     musicTile: {
         width: '100%',
-        backgroundColor: 'grey',
+        backgroundColor: Colors.primary,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -325,7 +359,7 @@ const styles = StyleSheet.create({
         height: 50,
         width: 50,
         borderRadius: 50 / 2,
-        backgroundColor: 'pink',
+        backgroundColor: Colors.primary,
         marginHorizontal: 5,
         alignItems: 'center',
         justifyContent: 'center'
@@ -346,7 +380,8 @@ const styles = StyleSheet.create({
         height: 70,
         position: 'absolute',
         bottom: 0,
-        backgroundColor: 'grey'
+        backgroundColor: Colors.primary,
+        elevation:10
     },
     musicModal: {
         width: '100%',
@@ -382,13 +417,27 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 16,
-        color:'#fff',
-        paddingHorizontal:10
+        color: '#fff',
+        paddingHorizontal: 10
     },
     item: {
         padding: 10,
-        flexDirection:'row'
-      },
+        flexDirection: 'row'
+    },
+    sideAddModal: {
+        height: '100%',
+        width: '100%',
+        backgroundColor: Colors.primary
+    },
+    header: {
+        width: '100%',
+        height: 50,
+        alignItems: 'center',
+        paddingHorizontal: 20,
+        flexDirection: 'row',
+        elevation: 5,
+        backgroundColor: Colors.primary
+    },
 })
 
 

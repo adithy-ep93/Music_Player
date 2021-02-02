@@ -45,69 +45,81 @@ const HomePage = ({ navigation }) => {
             <ScrollView>
                 <View style={styles.content}>
                     <View style={styles.itemBox}>
-                        <TouchableOpacity style={styles.folders} onPress={() => navigation.navigate("Library")}>
+                        <TouchableOpacity style={styles.folders} 
+                        // onPress={() => navigation.navigate("Library")}
+                        >
                             <View>
                                 <Text style={styles.count}>19</Text>
                                 <View style={styles.icon}>
-                                    <FontAwesome name="music" size={25} color={'#fff'} />
+                                    <FontAwesome name="music" size={25} color={Colors.primary} />
                                     <Text style={styles.foldertext}>LIBRARY</Text>
                                 </View>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.folders} onPress={() => navigation.navigate("Folder")}>
+                        <TouchableOpacity style={styles.folders} 
+                        // onPress={() => navigation.navigate("Folder")}
+                        >
                             <View>
                                 <Text style={styles.count}>5</Text>
                                 <View style={styles.icon}>
-                                    <FontAwesome name="folder-open" size={25} color={'#fff'} />
+                                    <FontAwesome name="folder-open" size={25} color={Colors.primary} />
                                     <Text style={styles.foldertext}>FOLDERS</Text>
                                 </View>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.folders} onPress={() => navigation.navigate("Favorites")}>
+                        <TouchableOpacity style={styles.folders} 
+                        // onPress={() => navigation.navigate("Favorites")}
+                        >
                             <View>
                                 <Text style={styles.count}>3</Text>
                                 <View style={styles.icon}>
-                                    <FontAwesome name="heart" size={25} color={'#fff'} />
+                                    <FontAwesome name="heart" size={25} color={Colors.primary} />
                                     <Text style={styles.foldertext}>FAVORITES</Text>
                                 </View>
                             </View>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.itemBox}>
-                        <TouchableOpacity style={styles.folders} onPress={() => navigation.navigate("Recentplay")}>
+                        <TouchableOpacity style={styles.folders}
+                        //  onPress={() => navigation.navigate("Recentplay")}
+                         >
                             <View>
                                 <Text style={styles.count}>6</Text>
                                 <View style={styles.icon}>
                                     <MaterialCommunityIcons
                                         name="playlist-play"
                                         size={25}
-                                        color={'#fff'}
+                                        color={Colors.primary}
                                     />
                                     <Text style={styles.foldertext}>RECENT PLAY</Text>
                                 </View>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.folders} onPress={() => navigation.navigate("RecentAdd")}>
+                        <TouchableOpacity style={styles.folders} 
+                        // onPress={() => navigation.navigate("RecentAdd")}
+                        >
                             <View>
                                 <Text style={styles.count}>0</Text>
                                 <View style={styles.icon}>
                                     <MaterialCommunityIcons
                                         name="playlist-plus"
                                         size={25}
-                                        color={'#fff'}
+                                        color={Colors.primary}
                                     />
                                     <Text style={styles.foldertext}>RECENT ADD</Text>
                                 </View>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.folders} onPress={() => navigation.navigate("Mostplay")}>
+                        <TouchableOpacity style={styles.folders}
+                        //  onPress={() => navigation.navigate("Mostplay")}
+                         >
                             <View>
                                 <Text style={styles.count}>9</Text>
                                 <View style={styles.icon}>
                                     <MaterialCommunityIcons
                                         name="playlist-music-outline"
                                         size={25}
-                                        color={'#fff'}
+                                        color={Colors.primary}
                                     />
                                     <Text style={styles.foldertext}>MOST PLAY</Text>
                                 </View>
@@ -115,7 +127,7 @@ const HomePage = ({ navigation }) => {
                         </TouchableOpacity>
                     </View>
                     <View style={styles.playlist}>
-                        <Text style={styles.foldertext
+                        <Text style={styles.foldertext1
                         }>PLAYLIST</Text>
                         <View style={styles.playlistIcon}>
                             <TouchableOpacity onPress={() => setAddModalVisible(true)}>
@@ -127,14 +139,16 @@ const HomePage = ({ navigation }) => {
                         </View>
                     </View>
                     <View style={styles.itemBox1}>
-                        <TouchableOpacity style={styles.folders} onPress={() => navigation.navigate("Defaultlist")}>
+                        <TouchableOpacity style={styles.folders} 
+                        // onPress={() => navigation.navigate("Defaultlist")}
+                        >
                             <View>
                                 <Text style={styles.count}>19</Text>
                                 <View style={styles.icon}>
                                     <MaterialCommunityIcons
                                         name="playlist-music-outline"
                                         size={40}
-                                        color={'#fff'}
+                                        color={Colors.primary}
                                     />
                                 </View>
                             </View>
@@ -145,7 +159,7 @@ const HomePage = ({ navigation }) => {
                         <TouchableOpacity style={styles.folders1} onPress={() => setAddModalVisible(true)}>
                             <View>
                                 <View style={styles.icon}>
-                                    <MaterialIcons name="add" size={40} color={'#fff'} />
+                                    <MaterialIcons name="add" size={40} color={Colors.primary} />
                                 </View>
                             </View>
                         </TouchableOpacity>
@@ -296,13 +310,13 @@ const styles = StyleSheet.create({
     },
     headerTitle: {
         flexDirection: 'row',
-        width: '90%',
+        width: '100%',
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingHorizontal: 10,
     },
     headIcons: {
-        width: '35%',
+        width: '40%',
         height: '100%',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -315,7 +329,7 @@ const styles = StyleSheet.create({
     },
     itemBox: {
         width: '100%',
-        backgroundColor: Colors.shade,
+        backgroundColor: Colors.primary,
         flexDirection: 'row',
         height: 100,
         alignItems: 'center',
@@ -325,7 +339,7 @@ const styles = StyleSheet.create({
     },
     itemBox1: {
         width: '100%',
-        backgroundColor: Colors.shade,
+        backgroundColor: Colors.primary,
         flexDirection: 'row',
         height: 100,
         alignItems: 'center',
@@ -351,13 +365,13 @@ const styles = StyleSheet.create({
         alignSelf: 'flex-end',
         paddingHorizontal: 10,
         paddingVertical: 5,
-        color: '#fff',
+        color: Colors.primary,
     },
     count1: {
         alignSelf: 'center',
         paddingHorizontal: 10,
         paddingVertical: 5,
-        color: '#fff',
+        color: Colors.primary,
     },
     icon: {
         alignItems: 'center',
@@ -366,7 +380,12 @@ const styles = StyleSheet.create({
     foldertext: {
         alignSelf: 'center',
         fontSize: 17,
-        color: '#fff',
+        color: Colors.primary,
+    },
+    foldertext1: {
+        alignSelf: 'center',
+        fontSize: 17,
+        color: Colors.secondary,
     },
     playlist: {
         width: '100%',
@@ -374,9 +393,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingHorizontal: 25,
-        backgroundColor: Colors.shade,
+        backgroundColor: Colors.primary,
         flexDirection: 'row',
         marginVertical: 10,
+        elevation:10
     },
     playlistIcon: {
         width: '30%',
@@ -390,7 +410,7 @@ const styles = StyleSheet.create({
         height: '25%',
         position: 'absolute',
         bottom: 0,
-        backgroundColor: Colors.primary,
+        backgroundColor: Colors.secondary,
         alignItems: 'center',
         justifyContent: 'center',
     },
