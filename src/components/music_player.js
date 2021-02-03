@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView, FlatList } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView, FlatList,TextInput } from 'react-native';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -100,9 +100,11 @@ const Item = ({ item, onPress, style }) => (
 
 
 const Music = () => {
+    const [addmodalVisible, setAddModalVisible] = useState(false);
     const [isModalVisible, setModalVisible] = useState(false);
     const [selectedId, setSelectedId] = useState(null);
     const [addPlaylistModalVisible, setAddPlaylistModalVisible] = useState(false);
+    const [text, setText] = useState('New list 1');
 
     const renderItem = ({ item }) => {
         return (
@@ -211,7 +213,7 @@ const Music = () => {
                             }} /> : <Entypo
                                     name="beamed-note"
                                     size={25}
-                                    color={'#fff'} />}
+                                    color={Colors.primary} />}
 
                         </View>
                         <View>
@@ -331,7 +333,7 @@ const Music = () => {
                             </View>
                             <View style={{ justifyContent: 'center', width: '50%', height: '100%', paddingLeft: 5 }}><Text style={{ fontSize: 25, color: '#fff' }}>Add to playlist</Text></View>
                             <View style={{ width: '45%', alignItems: 'center', justifyContent: 'flex-end', flexDirection: 'row', height: '100%', paddingHorizontal: 10, }}>
-                                <TouchableOpacity onPress={() => null}>
+                                <TouchableOpacity onPress={() => setAddModalVisible(true)}>
                                     <Ionicons style={styles.optionButton} name="add" size={26} color="#fff" />
                                 </TouchableOpacity>
                             </View>
@@ -339,6 +341,39 @@ const Music = () => {
                     </View>
                 </Modal>
             </View>
+
+             {/* AddModal */}
+             <Modal
+                isVisible={addmodalVisible}
+                style={{ margin: 0 }}
+                animationOut={'fadeOut'}
+                backdropOpacity={0.3}
+                onBackdropPress={() => setAddModalVisible(false)}>
+                <View style={styles.addModal}>
+                    <Text style={{ fontSize: 18 }}>Create a new playlist</Text>
+                    <TextInput
+                        onChangeText={(text) => setText(text)}
+                        defaultValue={text}
+                        style={styles.textfield}
+                    />
+                    <View
+                        style={{
+                            alignItems: 'center',
+                            justifyContent: 'space-between',
+                            marginTop: 40,
+                            flexDirection: 'row',
+                            alignSelf: 'flex-end',
+                            width: '40%',
+                            marginRight: 20,
+                        }}>
+                        <TouchableOpacity onPress={() => setAddModalVisible(false)}>
+                            <Text style={{ fontSize: 18 }}>CANCEL</Text>
+                        </TouchableOpacity>
+                        <Text style={{ fontSize: 18 }}>OK</Text>
+                    </View>
+                </View>
+            </Modal>
+
         </View>
     );
 }
@@ -359,7 +394,7 @@ const styles = StyleSheet.create({
         height: 50,
         width: 50,
         borderRadius: 50 / 2,
-        backgroundColor: Colors.primary,
+        backgroundColor: Colors.secondary,
         marginHorizontal: 5,
         alignItems: 'center',
         justifyContent: 'center'
@@ -381,7 +416,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 0,
         backgroundColor: Colors.primary,
-        elevation:10
+        elevation: 10
     },
     musicModal: {
         width: '100%',
@@ -437,6 +472,22 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         elevation: 5,
         backgroundColor: Colors.primary
+    },
+    addModal: {
+        width: '80%',
+        borderRadius: 5,
+        backgroundColor: '#fff',
+        alignSelf: 'center',
+        padding: 20,
+        height: '30%',
+        paddingBottom: 20
+    },
+    textfield: {
+
+        height: 40,
+        width: '100%',
+        borderBottomWidth: 1,
+        borderBottomColor: 'blue',
     },
 })
 

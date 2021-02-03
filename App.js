@@ -7,9 +7,9 @@ import  HomePage  from './src/screens/Home/home_page';
 
 const App = () => {
   return (
-  // <MainNavigation/>
+  <MainNavigation/>
   // <Scan/>
-  <HomePage/>
+  // <HomePage/>
   );
 };
 

@@ -6,16 +6,12 @@ import mainStyle from '../config/styles';
 
 
 import HomePage from '../screens/Home/home_page';
-// import Library from '../screens/pages/Library';
-// // import Theme from '../screens/Theme';
-
-// import Folder from '../screens/pages/Folder';
-// // import Download from '../screens/Pages/Audiofiles/Download';
-// import RecentAdd from '../screens/pages/RecentAdd';
-// import Favhome from '../screens/Favourite/favhome';
-// import Mostplay from '../screens/Mostplay';
-// import Defaultlist from '../screens/Defaultlist';
-// import Recentplay from '../screens/Recentplay';
+import Folder from '../screens/pages/Folder';
+import Library from '../screens/pages/Library';
+import Mostplay from '../screens/Mostplay';
+import Recentplay from '../screens/Recentplay';
+import Defaultlist from '../screens/Defaultlist';
+import Favhome from '../screens/Favourite/favhome';
 
 
 const Stack = createStackNavigator();
@@ -28,13 +24,12 @@ const HomeStackNavigation = () => {
             headerTintColor: "#fff"
         }} initialRouteName ={HomePage}>
             <Stack.Screen name="Home" component={HomePage} options={{ headerShown: false }} />
-            {/* <Stack.Screen name="Library" component={Library} options={{ headerShown: false }} />
+            <Stack.Screen name="Library" component={Library} options={{ headerShown: false }} />
             <Stack.Screen name="Folder" component={Folder} options={{ headerShown: false }} />
             <Stack.Screen name="Favorites" component={Favhome} options={{ headerShown: false }} />
             <Stack.Screen name="Mostplay" component={Mostplay} options={{ headerShown: false }} />
             <Stack.Screen name="Defaultlist" component={Defaultlist} options={{ headerShown: false }} />
-            <Stack.Screen name="RecentAdd" component={RecentAdd} options={{ headerShown: false }} />
-            <Stack.Screen name="Recentplay" component={Recentplay} options={{ headerShown: false }} /> */}
+            <Stack.Screen name="Recentplay" component={Recentplay} options={{ headerShown: false }} />
            
         </Stack.Navigator>
       

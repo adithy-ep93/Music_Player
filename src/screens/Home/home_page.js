@@ -46,7 +46,7 @@ const HomePage = ({ navigation }) => {
                 <View style={styles.content}>
                     <View style={styles.itemBox}>
                         <TouchableOpacity style={styles.folders} 
-                        // onPress={() => navigation.navigate("Library")}
+                        onPress={() => navigation.navigate("Library")}
                         >
                             <View>
                                 <Text style={styles.count}>19</Text>
@@ -57,7 +57,7 @@ const HomePage = ({ navigation }) => {
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.folders} 
-                        // onPress={() => navigation.navigate("Folder")}
+                        onPress={() => navigation.navigate("Folder")}
                         >
                             <View>
                                 <Text style={styles.count}>5</Text>
@@ -68,7 +68,7 @@ const HomePage = ({ navigation }) => {
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.folders} 
-                        // onPress={() => navigation.navigate("Favorites")}
+                        onPress={() => navigation.navigate("Favorites")}
                         >
                             <View>
                                 <Text style={styles.count}>3</Text>
@@ -81,7 +81,7 @@ const HomePage = ({ navigation }) => {
                     </View>
                     <View style={styles.itemBox}>
                         <TouchableOpacity style={styles.folders}
-                        //  onPress={() => navigation.navigate("Recentplay")}
+                         onPress={() => navigation.navigate("Recentplay")}
                          >
                             <View>
                                 <Text style={styles.count}>6</Text>
@@ -111,7 +111,7 @@ const HomePage = ({ navigation }) => {
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.folders}
-                        //  onPress={() => navigation.navigate("Mostplay")}
+                         onPress={() => navigation.navigate("Mostplay")}
                          >
                             <View>
                                 <Text style={styles.count}>9</Text>

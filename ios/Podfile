@@ -10,13 +10,10 @@ target 'musicplayer' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
-<<<<<<< HEAD
   pod 'react-native-track-player', :path => '../node_modules/react-native-track-player'
-=======
   pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
 
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
->>>>>>> shilpa
 
   target 'musicplayerTests' do
     inherit! :complete
