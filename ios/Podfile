@@ -12,6 +12,8 @@ target 'musicplayer' do
 
   pod 'react-native-track-player', :path => '../node_modules/react-native-track-player'
 
+  pod 'RNCCheckbox', :path => '../node_modules/@react-native-community/checkbox'
+
   target 'musicplayerTests' do
     inherit! :complete
     # Pods for testing
