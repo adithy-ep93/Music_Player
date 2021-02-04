@@ -31,7 +31,7 @@ const Library = () => {
   return (
     <View>
         
-     <View style={{height:'100%',backgroundColor:'#4682B4'}}>
+     <View style={styles.container}>
 
             {/*Header */}
         <View style={styles.headerContainer}>
@@ -110,6 +110,11 @@ const Library = () => {
 export default Library;
 
 const styles = StyleSheet.create({
+  container:{
+    backgroundColor: mainStyle.colors.primary,
+    flex:1,
+    flexDirection:'column'
+},
   headerContainer: {
     flexDirection: 'row',
     width: '100%',

@@ -1,10 +1,11 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import Colors from './src/config/colors';
-// import MainNavigation from './src/navigation/main_navigation';
-import Stacknavigation from './src/navigation/Stacknavigation'
+
+// import Stacknavigation from './src/navigation/Stacknavigation';
+import Tabnavigation from './src/navigation/Tabbar';
 const App = () => {
-  return (<Stacknavigation/>);
+  return (<Tabnavigation/>);
 };
 
 

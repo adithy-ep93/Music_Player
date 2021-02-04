@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component,useState } from 'react';
 import { Text,View,SafeAreaView,StyleSheet,TouchableOpacity,FlatList,Image} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
@@ -7,17 +7,22 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
 
 import ContactTile from '../../../components/contactTile';
-
+import OptionCard from '../../../components/option_card';
+import Modal from 'react-native-modal';
 import UserData from '../data';
-import { ScrollView } from 'react-native-gesture-handler';
+import { ScrollView, TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 const USERS = new UserData();
 const Music_item = USERS.Music;
-
+const options = ["Edit", "Shuffle","Add to","Sort by" ]
+const Sortby = ["A-Z", "Z-A", "Year","Artist","Album","Folder","Date added","Reverse" ]
 
 const Music = () => {
 
   const navigation = useNavigation();
+  ncost [sortmodalVisible, setSortModal] = useState(false);
+  const [optionButtonState, setOptionButtonState] = useState(false);
+
   const renderItem = ({ item }) => (
     <ContactTile
             data={item.image}
@@ -30,7 +35,7 @@ const Music = () => {
 
   
   return (
-    <View style={{backgroundColor:'#87CEFA',flex:1,flexDirection:'column'}}>
+    <View style={styles.container}>
          
             
             <View style={{backgroundColor:'#4169E1'}}>
@@ -41,8 +46,11 @@ const Music = () => {
                     <View style={styles.nameContainer}>
                     <Text style={styles.headerHeading}>Music</Text></View></View>
                     <MaterialIcons name="card-giftcard" size={20} color="#fff"/>
-                  <TouchableOpacity><FontAwesome name="search" size={20} color="#fff"/></TouchableOpacity>
-                    <TouchableOpacity><Entypo name="dots-three-vertical" size={20} color="#fff" style={{marginRight:16}}/></TouchableOpacity>
+                  <TouchableWithoutFeedback>
+                    <FontAwesome name="search" size={20} color="#fff"/>
+                    </TouchableWithoutFeedback>
+                    <TouchableWithoutFeedback   onPress={() => setOptionButtonState(true)}>
+                      <Entypo name="dots-three-vertical" size={20} color="#fff" style={{marginRight:16}}/></TouchableWithoutFeedback>
               </View>
              </View> 
      
@@ -71,7 +79,52 @@ const Music = () => {
         </View>
 
 
-       
+            
+{/* Optional card */}
+<View style={styles.optionCardContainer}>
+  {optionButtonState ? <View>
+      <OptionCard
+          data={options}
+          selectedItem={(item) => {
+              console.log(item)
+              switch (item) {
+                  case 'Edit':
+                      navigation.navigate('People');
+                      setOptionButtonState(false);
+                      break;
+                  case 'Shuffle':
+                      navigation.navigate('Options');
+                      setOptionButtonState(false);
+                      break;
+                  case 'Sort by':
+                     setSortModal(true);
+                      break;
+              }
+          }}
+      />
+  </View> : <View></View>}
+ 
+</View>
+
+{/* sortby moddal */}
+  <View>
+  <Modal
+    isVisible={sortmodalVisible}
+    animationIn={'fadeIn'}
+    animationOut={'fadeOut'}
+    style={{ margin: 1 }}
+    backdropOpacity={0}
+    onBackdropPress={() => setSortModal(false)}>
+    <View style={styles.optionModal}>
+      <OptionCard
+      data={Sortby}
+      selectedItem={(item) => console.log(item)}
+/>
+  </View>
+  </Modal>
+</View> 
+
+
 
     
        
@@ -84,6 +137,11 @@ const Music = () => {
 export default Music;
 
 const styles = StyleSheet.create({
+  container:{
+    backgroundColor: mainStyle.colors.primary,
+    flex:1,
+    flexDirection:'column'
+},
   headerContainer: {
     flexDirection: 'row',
     width: '100%',
@@ -122,13 +180,26 @@ const styles = StyleSheet.create({
       height: 50,
       alignItems: 'center',
       justifyContent: 'center'
-           
-           
-        },
+       },
   circle:{
             width: 50,
             height: 50,
             borderRadius: 50 / 1,
-            
-        }
+         },
+ // optionalcard
+  optionModal: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+  },
+  optionButton: {
+    paddingRight: 20,
+    paddingLeft: 20,
+    paddingVertical: 20,
+},
+optionCardContainer: {
+    position: 'absolute',
+   
+    right: 0,
+},
 });
