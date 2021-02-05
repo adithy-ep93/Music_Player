@@ -1,36 +1,41 @@
-import React, { Component } from 'react';
+import React, { Component,useState } from 'react';
 import { Text,View,SafeAreaView,StyleSheet,TouchableOpacity,FlatList,Image,Pressable} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
+import OptionCard from '../../components/option_card';
+import Modal from 'react-native-modal';
 
-import ContactTile from '../../components/contactTile';
 
 import Divider from '../../components/divider'
-import { ScrollView } from 'react-native-gesture-handler';
-
-
+import { ScrollView, TouchableWithoutFeedback } from 'react-native-gesture-handler';
+const options = ["Sort by" ]
+const Sortby = ["A-Z", "Z-A", "Date Added","Track number","Reverse" ]
 
 const Folder = () => {
-
-  const navigation = useNavigation();
+ 
+    const [sortmodalVisible, setSortModal] = useState(false);
+    const [optionButtonState, setOptionButtonState] = useState(false);
+    const navigation = useNavigation();
   
   
   return (
-    <View style={{backgroundColor:'#87CEFA',flex:1,flexDirection:'column'}}>
+    <View style={styles.container}>
          
             
             <View style={{backgroundColor:'#4169E1'}}>
               <View style={styles.headerContainer}>
-                <TouchableOpacity onPress={()=> navigation.goBack(null)}>
-                <MaterialIcons name="arrow-back" size={20} color="#fff"/></TouchableOpacity>
+                <TouchableWithoutFeedback onPress={()=> navigation.goBack(null)}>
+                <MaterialIcons name="arrow-back" size={20} color="#fff"/></TouchableWithoutFeedback>
                 <View style={styles.innerContainer}>
                     <View style={styles.nameContainer}>
                     <Text style={styles.headerHeading} >FOLDER</Text></View></View>
-                <TouchableOpacity><FontAwesome name="search" size={20} color="#fff"/></TouchableOpacity>
-                <TouchableOpacity><Entypo name="dots-three-vertical" size={20} color="#fff" style={{marginRight:16}}/></TouchableOpacity>
+                <TouchableWithoutFeedback><FontAwesome name="search" size={20} color="#fff"/></TouchableWithoutFeedback>
+                <TouchableWithoutFeedback   onPress={() => setOptionButtonState(true)} >
+                    <Entypo name="dots-three-vertical" size={20} color="#fff" style={{marginRight:16}}/>
+                    </TouchableWithoutFeedback>
               </View>
              </View> 
      
@@ -53,7 +58,9 @@ const Folder = () => {
                         <View style={{ justifyContent: 'center',}}>
                                 <View style={{flexDirection:'row'}}>
                                 <Text style={styles.right}>5 songs</Text> 
+                                <TouchableOpacity>
                                 <Entypo name="dots-three-vertical" size={20} color="#fff"/>
+                                </TouchableOpacity>
                                 </View>
                         </View>
                 </View>
@@ -145,6 +152,44 @@ const Folder = () => {
 
 
 
+{/* Optional card */}
+
+
+       
+<View style={styles.optionCardContainer}>
+                {optionButtonState ? <View>
+                    <OptionCard
+                        data={options}
+                        selectedItem={(item) => {
+                            console.log(item)
+                            switch (item) {
+                               case 'Sort by':
+                                setSortModal(true);
+                                    break;
+                            }
+                        }}
+                    />
+                </View> : <View></View>}
+            </View>
+ {/* sort modal */}
+ <View>
+      <Modal
+            isVisible={sortmodalVisible}
+            animationIn={'fadeIn'}
+            animationOut={'fadeOut'}
+            style={{ margin: 1 }}
+            backdropOpacity={0}
+            onBackdropPress={() => setSortModal(false)}>
+            <View style={styles.optionModal}>
+                <OptionCard
+                data={Sortby}
+                selectedItem={(item) => console.log(item)}
+              />
+            </View>
+          </Modal>
+          </View> 
+
+
         
   
 
@@ -156,6 +201,9 @@ const Folder = () => {
 export default Folder;
 
 const styles = StyleSheet.create({
+    container:{
+        flex:1,
+        flexDirection:'column'},
   headerContainer: {
     flexDirection: 'row',
     width: '100%',
@@ -182,10 +230,10 @@ const styles = StyleSheet.create({
         width: '50%',
         },
 
-     list:{
+ list:{
         backgroundColor:'#87CEFA'
         },
-     newIconContainer: {
+ newIconContainer: {
       position: 'absolute',
       bottom: '50%',
       right: 15,
@@ -193,9 +241,7 @@ const styles = StyleSheet.create({
       height: 50,
       alignItems: 'center',
       justifyContent: 'center'
-           
-           
-        },
+    },
  leftcontainer: {
       padding: 5,
       paddingLeft: 10,
@@ -245,7 +291,21 @@ circle1:{
           width: 50,
           height: 50,
           borderRadius: 50 / 1,
-          
-      }
-
+     },
+    // optionalcard
+    optionModal: {
+        position: 'absolute',
+        top: 0,
+        right: 0,
+      },
+      optionButton: {
+        paddingRight: 20,
+        paddingLeft: 20,
+        paddingVertical: 20,
+    },
+    optionCardContainer: {
+        position: 'absolute',
+       
+        right: 0,
+    },
 });

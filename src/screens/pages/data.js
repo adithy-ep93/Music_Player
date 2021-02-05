@@ -121,12 +121,7 @@ export default class UserData {
             message: '<unknown>',
             image: require('../../assets/music/iconlogo.jpg')
         },
-        {
-            id: 5,
-            name: 'Kgf malayalam',
-            message: 'BHADRA BOYS',
-            image: require('../../assets/music/iconlogo.jpg')
-        },
+    
         
        ]
 

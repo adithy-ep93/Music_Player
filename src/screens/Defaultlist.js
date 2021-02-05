@@ -6,9 +6,11 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Octicons from 'react-native-vector-icons/Octicons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {useNavigation} from '@react-navigation/native';
 
 
 const Defaultlist = () => {
+  const navigation = useNavigation();
   return (
 
     /* Main View starts here */
@@ -20,7 +22,7 @@ const Defaultlist = () => {
 
           <View>
             <View style={{height:80,backgroundColor:"slategray",paddingHorizontal:5,flexDirection:"row",paddingTop:15,alignItems:"center"}}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={()=> navigation.goBack(null)}>
                 <Feather name="arrow-left" style={{color:"white",paddingLeft:10}} size={30} color="#fff" />
               </TouchableOpacity>
                 <Text style={{ fontSize: 20,fontWeight:"bold",alignContent:"center",paddingLeft:40,color:"white"}} >Default list</Text>  

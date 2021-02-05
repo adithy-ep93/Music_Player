@@ -89,7 +89,7 @@ const Theme = () => {
                       <Pressable style={styles.pressable} android_ripple={{ color: 'rgba(0,0,0,0.1)' }} >
                            <ImageBackground
                             style={styles.image}
-                            source={require("../../assests/Theme/img6.jpg")}> 
+                            source={require('../../assets/Theme/img6.jpg')}> 
                             <Ionicons name="checkmark-circle-outline" size={35} color="#fff" style={{ alignSelf:'center',marginVertical:60,}}/>
                              </ImageBackground>
                       </Pressable>
@@ -97,7 +97,7 @@ const Theme = () => {
                       <Pressable style={{marginRight:16}} android_ripple={{ color: 'rgba(0,0,0,0.1)' }}>
                       
                           <ImageBackground style={styles.image}
-                            source={require("../../assests/Theme/pink.jpg")}>
+                            source={require("../../assets/Theme/pink.jpg")}>
                                <FontAwesome name="arrow-circle-o-down" size={35} color="#fff" style={{ alignSelf:'center',marginVertical:50}}/> 
                            </ImageBackground>
                       </Pressable>
@@ -109,21 +109,21 @@ const Theme = () => {
                 <View style={{flex:1,flexDirection:'row',top:5,alignSelf:'center',width:'100%',height:'100%',justifyContent:'space-between'}}>
                       
                       <Pressable style={{marginLeft:16}} android_ripple={{ color: 'rgba(0,0,0,0.1)' }} >
-                      <ImageBackground style={styles.image} source={require("../../assests/Theme/img1.jpg")}>
+                      <ImageBackground style={styles.image} source={require("../../assets/Theme/img1.jpg")}>
                     <FontAwesome name="arrow-circle-o-down" size={35} color="#fff" style={{ alignSelf:'center',marginVertical:55}}/> 
                             </ImageBackground>
                       </Pressable>
                        
                       <Pressable   android_ripple={{ color: 'rgba(0,0,0,0.1)' }}>
                           <ImageBackground style={styles.image}
-                            source={require("../../assests/Theme/imag4.jpg")}>
+                            source={require("../../assets/Theme/imag4.jpg")}>
                                   <FontAwesome name="arrow-circle-o-down" size={35} color="#fff" style={{ alignSelf:'center',marginVertical:55}}/> 
                               </ImageBackground>
                       </Pressable>
 
                       <Pressable  style={{marginRight:16}} android_ripple={{ color: 'rgba(0,0,0,0.1)' }}>
                           <ImageBackground style={styles.image}
-                            source={require("../../assests/Theme/pic5.jpg")}>
+                            source={require("../../assets/Theme/pic5.jpg")}>
                                   <FontAwesome name="arrow-circle-o-down" size={35} color="#fff" style={{ alignSelf:'center',marginVertical:55}}/> 
                               </ImageBackground>
     
@@ -138,7 +138,7 @@ const Theme = () => {
                       
                       <Pressable style={{marginLeft:16}} android_ripple={{ color: 'rgba(0,0,0,0.1)' }} >
                       <ImageBackground style={styles.image}
-                            source={require("../../assests/Theme/img7.jpg")}>
+                            source={require("../../assets/Theme/img7.jpg")}>
                               <FontAwesome name="arrow-circle-o-down" size={35} color="#fff" style={{ alignSelf:'center',marginVertical:55}}/> 
 
                       </ImageBackground>
@@ -147,7 +147,7 @@ const Theme = () => {
                        
                       <Pressable   android_ripple={{ color: 'rgba(0,0,0,0.1)' }}>
                           <ImageBackground style={styles.image}
-                            source={require("../../assests/Theme/pic7.jpg")}>
+                            source={require("../../assets/Theme/pic7.jpg")}>
                                <FontAwesome name="arrow-circle-o-down" size={35} color="#fff" style={{ alignSelf:'center',marginVertical:55}}/> 
                             </ImageBackground>
                            
@@ -155,7 +155,7 @@ const Theme = () => {
 
                       <Pressable  style={{marginRight:16}} android_ripple={{ color: 'rgba(0,0,0,0.1)' }}>
                           <ImageBackground style={styles.image}
-                            source={require("../../assests/Theme/pic8.jpg")}>
+                            source={require("../../assets/Theme/pic8.jpg")}>
                                <FontAwesome name="arrow-circle-o-down" size={35} color="#fff" style={{ alignSelf:'center',marginVertical:55}}/> 
                             </ImageBackground>
                            
@@ -168,7 +168,7 @@ const Theme = () => {
                       
                       <Pressable style={{marginLeft:16}} android_ripple={{ color: 'rgba(0,0,0,0.1)' }} >
                       <ImageBackground style={styles.image}
-                            source={require("../../assests/Theme/pic3.jpg")}>
+                            source={require("../../assets/Theme/pic3.jpg")}>
                               <FontAwesome name="arrow-circle-o-down" size={35} color="#fff" style={{ alignSelf:'center',marginVertical:55}}/> 
 
                       </ImageBackground>
@@ -177,7 +177,7 @@ const Theme = () => {
                        
                       <Pressable   android_ripple={{ color: 'rgba(0,0,0,0.1)' }}>
                           <ImageBackground style={styles.image}
-                            source={require("../../assests/Theme/gpic.jpg")}>
+                            source={require("../../assets/Theme/gpic.jpg")}>
                                <FontAwesome name="arrow-circle-o-down" size={35} color="#fff" style={{ alignSelf:'center',marginVertical:55}}/> 
                             </ImageBackground>
                            
@@ -185,7 +185,7 @@ const Theme = () => {
 
                       <Pressable  style={{marginRight:16}} android_ripple={{ color: 'rgba(0,0,0,0.1)' }}>
                           <ImageBackground style={styles.image}
-                            source={require("../../assests/Theme/pic6.jpg")}>
+                            source={require("../../assets/Theme/pic6.jpg")}>
                                <FontAwesome name="arrow-circle-o-down" size={35} color="#fff" style={{ alignSelf:'center',marginVertical:55}}/> 
                             </ImageBackground>
                            

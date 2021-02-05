@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
-import mainStyle from '../config/styles';
 import Divider from '../components/divider';
 
 const ContactTile = ({ data, name, subname, song, onPress }) => {

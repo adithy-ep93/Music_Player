@@ -8,7 +8,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Colors from '../config/colors';
-import colors from '../config/colors';
+
 
 const CustomDrawerContent = ({ navigation, ...props }) => {
     return (
@@ -32,7 +32,7 @@ const CustomDrawerContent = ({ navigation, ...props }) => {
                             
                         }
                         label="Games"
-                        onPress={() => navigation.navigate('Home')}
+                        onPress={() => navigation.navigate('Aads')}
                     />
                     <Divider style={{ width: '80%', marginHorizontal: 20 }} />
                     <DrawerItem
@@ -80,7 +80,7 @@ const CustomDrawerContent = ({ navigation, ...props }) => {
                                     color={'#fff'} />
                         )}
                         label="Theme"
-                        onPress={() => null}
+                        onPress={() => navigation.navigate("Theme")}
                     />
                     <Divider style={{ width: '80%', marginHorizontal: 20 }} />
                     <DrawerItem style={styles.drawerItemStyle}
@@ -121,7 +121,7 @@ const CustomDrawerContent = ({ navigation, ...props }) => {
                                     size={size}
                                     color={'#fff'} />
                         )}
-                        label="Hot App" onPress={() => null} />
+                        label="Hot App" onPress={() => navigation.navigate("Aads")} />
                     <Divider style={{ width: '80%', marginHorizontal: 20 }} />
                     <DrawerItem style={styles.drawerItemStyle}
                         {...props}

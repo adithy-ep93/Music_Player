@@ -69,10 +69,10 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       paddingLeft: 15
   },
-  mainStyle:{
-      color:'white',
-      fontSize:20,
-      padding:25
-     },
+  // mainStyle:{
+  //     color:'white',
+  //     fontSize:20,
+  //     padding:25
+  //    },
 
 });

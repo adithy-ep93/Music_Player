@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, Switch, TouchableOpacity} from 'react-native';
- import Colors from '../config/colors';
+import Colors from '../config/colors';
 
-const SwitchTile = ({text, subText}) =>{
+const SwitchTile = ({text, subText,third,forth,onPress}) =>{
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
   const toggleSwitchOn = () => setIsEnabled((previousState) => previousState);
@@ -12,18 +12,20 @@ const SwitchTile = ({text, subText}) =>{
   }
 
   return (
-   <TouchableOpacity onPress={()=> onSwitch()}>
+   <TouchableOpacity  onPress={()=> onSwitch()}>
 
-      <View style={{ backgroundColor:Colors.secondary, width:'100%'}}>
+      <View style={{backgroundColor:'#4682B4', width:'100%'}}>
           <View style={style.switch}>
-              <View>
+              <View style={{marginTop:20}}>
                   <Text style={style.text}>{text}</Text>
                   <Text style={style.subText}>{subText}</Text>
+                  <Text  style={style.subText}>{third} </Text>
+                  <Text  style={style.subText}>{forth} </Text>
               </View>
-              <View style={{height:40}}>
+              <View style={{height:20}}>
                   <Switch
-                      trackColor={{false: '#ffcc00', true: 'white'}}
-                      thumbColor={isEnabled ?'white': '#ffcc00'}
+                      trackColor={{false: '#bdbdbd', true: '#e8eae6'}}
+                      thumbColor={isEnabled ? Colors.primary : '#ececec'}
                       onValueChange={toggleSwitch}
                       value={isEnabled}
                       style={{marginRight:20}}
@@ -39,25 +41,26 @@ export default SwitchTile;
 const style = StyleSheet.create({
   text: {
     fontSize:16,
-    color: 'white',
-    paddingLeft:10
+    color: '#fff',
+    paddingLeft:10,
+    
   },
   switch: {
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    height: 55,
-    backgroundColor:Colors.secondary,
-    // paddingLeft: 5,
-    // marginBottom:10,
-    marginLeft:20,
-    marginTop:20
+    height: 48,
+    backgroundColor: '#4682B4',
+    paddingLeft: 5,
+    marginBottom:20,
+   
   },
   subText: {
     fontSize: 12,
-    color: 'grey',
-    paddingLeft:10
+    color: '#fff',
+    paddingLeft:10,
+    fontWeight:'200'
   },
 });
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer} from '@react-navigation/native';
-import mainStyle from '../config/styles';
+import Colors from '../config/colors';
 
 import Library from '../screens/Pages/Library';
 import Theme from '../screens/Pages/Theme';
@@ -25,7 +25,7 @@ const HomeScreenStack = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator screenOptions={{
-            headerStyle: { backgroundColor: mainStyle.colors.primary },
+            headerStyle: { backgroundColor: Colors.primary },
             headerTintColor: "#fff"
         }} initialRouteName ={Library}>
             <Stack.Screen name="Library" component={Library} options={{ headerShown: false }} />

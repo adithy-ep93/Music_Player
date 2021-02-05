@@ -4,7 +4,7 @@ import RadioButtonRN from 'radio-buttons-react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import SwitchTile from '../components/SwitchTile';
 import Modal from 'react-native-modal';
-import colors from '../config/colors';
+import Colors from '../config/colors';
 
   const SleepTimer = ({navigation}) => {
   const [exitmodalVisible,setexitmodalVisible]=useState(false);
@@ -87,7 +87,7 @@ return(
 
 const styles = StyleSheet.create({
   mycontainer: {
-  backgroundColor:colors.secondary,
+  backgroundColor:Colors.secondary,
   height:'100%'
   },
   headerContainer: {

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { Text,View,SafeAreaView,StyleSheet,TouchableOpacity,FlatList,ScrollView,Image} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import colors from '../../config/colors';
+
 
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
 
 import ContactTile from '../../components/contactTile';
+import Colors from '../../config/colors';
 
 import UserData from './data';
 import { color } from 'react-native-reanimated';
@@ -31,7 +32,7 @@ const Library = () => {
   return (
     <View>
         
-     <View style={{height:'100%',backgroundColor:'#4682B4'}}>
+     <View style={styles.container}>
 
             {/*Header */}
         <View style={styles.headerContainer}>
@@ -110,6 +111,11 @@ const Library = () => {
 export default Library;
 
 const styles = StyleSheet.create({
+  container:{
+    backgroundColor: Colors.primary,
+    flex:1,
+    flexDirection:'column'
+},
   headerContainer: {
     flexDirection: 'row',
     width: '100%',

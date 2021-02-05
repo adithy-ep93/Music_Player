@@ -2,8 +2,10 @@ import React from 'react';
 import { View, Text, StyleSheet, ScrollView,TouchableOpacity,Image,StatusBar} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import {useNavigation } from '@react-navigation/native';
 
 const Aads = () => {
+  const navigation = useNavigation();
     return(
 
 
@@ -13,11 +15,13 @@ const Aads = () => {
         <View style={{alignItems:'center'}}>
           <StatusBar backgroundColor="white" translucent={true} />
             <View style={{ alignItems: 'center',height:60,flexDirection:'row',right: 110,justifyContent:'space-between'}}>
+            <TouchableOpacity onPress={()=>navigation.goBack(null)}>
             <AntDesign
                         name="arrowleft"
                   
                         size={25}
                         color={'black'} />
+            </TouchableOpacity>
             
                 <Text style={{ fontSize: 17, color: 'black', margin: 10, flexDirection:'row' }}>Top Free</Text>
             </View>

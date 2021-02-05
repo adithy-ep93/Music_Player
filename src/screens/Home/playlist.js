@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Share, TextInput, ToastAndroid, PermissionsAndroid } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import { CheckBox, Divider } from 'react-native-elements';
+import {Divider } from 'react-native-elements';
 import Colors from '../../config/colors';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { useNavigation } from '@react-navigation/native';
@@ -12,10 +12,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import Modal from 'react-native-modal';
-import {
-    launchCamera,
-    launchImageLibrary
-} from 'react-native-image-picker';
+import {launchImageLibrary } from 'react-native-image-picker';
 
 
 const PlayList = () => {
@@ -23,6 +20,7 @@ const PlayList = () => {
     const [editModalVisible, setEditModalVisible] = useState(false);
     const [deleteModalVisible, setDeleteModalVisible] = useState(false);
     const [artModalVisible, setArtModalVisible] = useState(false);
+    const [addmodalVisible, setAddModalVisible] = useState(false);
     const [text, setText] = useState('New list 1');
     const [filePath, setFilePath] = useState({});
     const navigation = useNavigation();
@@ -137,7 +135,7 @@ const PlayList = () => {
 
                 </View>
                 <Divider style={{ marginHorizontal: 20, marginVertical: 5 }} />
-                <TouchableOpacity style={styles.add}>
+                <TouchableOpacity style={styles.add} onPress={() => setAddModalVisible(true)}>
                     <View >
                         <MaterialIcons name="add" size={30} color={'#fff'} />
                     </View>
@@ -327,10 +325,47 @@ const PlayList = () => {
                         </TouchableOpacity>
                         <Text style={{ fontSize: 18, color:'blue',padding:5 }}>DELETE</Text>
                     </View>
+                    <TouchableOpacity>
+                        <View style={{height:40,width:100,borderRadius:5,borderWidth:1,borderColor:'#fff',alignItems:'center',justifyContent:'center'}}>
+                            <Text style={{color:'#ffff', fontSize:16}}>Delete all</Text>
+                        </View>
+                    </TouchableOpacity>
                 </View>
             </Modal>
 
        
+            {/* AddModal */}
+            <Modal
+                isVisible={addmodalVisible}
+                style={{ margin: 0 }}
+                animationOut={'fadeOut'}
+                backdropOpacity={0.3}
+                onBackdropPress={() => setAddModalVisible(false)}>
+                <View style={styles.addModal}>
+                    <Text style={{ fontSize: 18 }}>Create a new playlist</Text>
+                    <TextInput
+                        onChangeText={(text) => setText(text)}
+                        defaultValue={text}
+                        style={styles.textfield}
+                    />
+                    <View
+                        style={{
+                            alignItems: 'center',
+                            justifyContent: 'space-between',
+                            marginTop: 40,
+                            flexDirection: 'row',
+                            alignSelf: 'flex-end',
+                            width: '40%',
+                            marginRight: 20,
+                        }}>
+                        <TouchableOpacity onPress={() => setAddModalVisible(false)}>
+                            <Text style={{ fontSize: 18 }}>CANCEL</Text>
+                        </TouchableOpacity>
+                        <Text style={{ fontSize: 18 }}>OK</Text>
+                    </View>
+                </View>
+            </Modal>
+
 
         </View>
     );
@@ -457,6 +492,22 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         padding: 20,
         paddingBottom: 20
+    },
+    addModal: {
+        width: '80%',
+        borderRadius: 5,
+        backgroundColor: '#fff',
+        alignSelf: 'center',
+        padding: 20,
+        height: '30%',
+        paddingBottom: 20
+    },
+    textfield: {
+
+        height: 40,
+        width: '100%',
+        borderBottomWidth: 1,
+        borderBottomColor: 'blue',
     },
 
 });

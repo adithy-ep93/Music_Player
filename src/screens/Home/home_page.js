@@ -103,7 +103,7 @@ const HomePage = ({ navigation }) => {
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.folders}
-                        // onPress={() => navigation.navigate("RecentAdd")}
+                        onPress={() => navigation.navigate("RecentAdd")}
                         >
                             <View>
                                 <Text style={styles.count}>0</Text>
@@ -147,7 +147,7 @@ const HomePage = ({ navigation }) => {
                     </View>
                     <View style={styles.itemBox1}>
                         <TouchableOpacity style={styles.folders}
-                        // onPress={() => navigation.navigate("Defaultlist")}
+                        onPress={() => navigation.navigate("Defaultlist")}
                         >
                             <View>
                                 <Text style={styles.count}>19</Text>
@@ -174,7 +174,7 @@ const HomePage = ({ navigation }) => {
                 </View>
                 <View style={{ height: 100 }}></View>
             </ScrollView>
-            <TouchableOpacity style={styles.shuffle} onPress={() => setAddModalVisible(true)}>
+            <TouchableOpacity style={styles.shuffle} >
                 <View >
                     <MaterialIcons name="shuffle" size={30} color={'#fff'} />
                 </View>
@@ -352,9 +352,9 @@ const HomePage = ({ navigation }) => {
 
                         </View>
                         <View style={{ marginTop: 20 }}>
-                            <Ripple onPress={() =>
-            checkStatus1 ? setCheckStatus1(false) : setCheckStatus1(true)
-          }>
+                            <TouchableOpacity onPress={() =>
+                                checkStatus1 ? setCheckStatus1(false) : setCheckStatus1(true)
+                            }>
                                 <View style={styles.check}>
                                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                         <View style={styles.folder}>
@@ -370,22 +370,23 @@ const HomePage = ({ navigation }) => {
 
                                         </View>
 
-                                       
-                                       <View style={{width:100,height:50,alignSelf:'flex-end'}}>
-                                       <CheckBox
-                left
-                checked={checkStatus1}
-                checkedColor={Colors.secondary}
-                style={{ alignSelf: 'flex-end' }}
 
-              />
-                                       </View>
-                                        
+                                        <View style={{ width: 100, height: 50, alignSelf: 'flex-end' }}>
+                                            <CheckBox
+                                                left
+                                                checked={checkStatus1}
+                                                checkedColor={Colors.secondary}
+                                                style={{ alignSelf: 'flex-end' }}
+
+                                            />
+                                        </View>
+
                                     </View>
                                 </View>
-                            </Ripple>
+                            </TouchableOpacity>
 
                         </View>
+                        <View style={{width:'50%',height:40,borderRadius:5,borderWidth:1,borderColor:'#ffff',position:'absolute',bottom:10,alignSelf:'center',alignItems:'center',justifyContent:'center'}}><Text style={{color:'#ffff',fontSize:18}}>Delete all</Text></View>
                     </View>
                 </Modal>
             </View>
@@ -589,7 +590,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         paddingHorizontal: 20,
-       
+
     },
     folder: {
         width: 50,

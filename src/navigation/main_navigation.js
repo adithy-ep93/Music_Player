@@ -10,6 +10,8 @@ import Equalizer from '../screens/Equalizer/equalizer';
 import DriveMode from '../screens/DriveMode';
 import Widget from '../screens/Widget/Widget';
 import SleepTimer from '../screens/SleepTimer';
+import Aads from '../screens/aads';
+import Theme from '../screens/pages/Theme';
 
 import CustomDrawerContent from './drawer_content';
 
@@ -33,6 +35,8 @@ export default function MainNavigation() {
                 <Drawer.Screen name="DriveMode" component={DriveMode} />
                 <Drawer.Screen name="Widget" component={Widget} />
                 <Drawer.Screen name="SleepTimer" component={SleepTimer} />
+                <Drawer.Screen name="Aads" component={Aads} />
+                <Drawer.Screen name="Theme" component={Theme} />
             </Drawer.Navigator>
         </NavigationContainer >
     );
