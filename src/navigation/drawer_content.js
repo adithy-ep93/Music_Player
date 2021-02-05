@@ -8,7 +8,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Colors from '../config/colors';
-import colors from '../config/colors';
+
 
 const CustomDrawerContent = ({ navigation, ...props }) => {
     return (
@@ -54,7 +54,7 @@ const CustomDrawerContent = ({ navigation, ...props }) => {
                             size={size}
                             color={'#fff'} />)}
                         label="Equilizer"
-                        onPress={() => null}
+                        onPress={() => navigation.navigate('EqualizerVolume')}
                     />
                     <Divider style={{ width: '80%', marginHorizontal: 20 }} />
                     <DrawerItem
@@ -91,7 +91,7 @@ const CustomDrawerContent = ({ navigation, ...props }) => {
                                     size={size}
                                     color={'#fff'} />
                         )}
-                        label="Widget" onPress={() => null} />
+                        label="Widget" onPress={() => navigation.navigate('Widget')} />
                     <Divider style={{ width: '80%', marginHorizontal: 20 }} />
                     <DrawerItem style={styles.drawerItemStyle}
                         {...props}
@@ -101,7 +101,7 @@ const CustomDrawerContent = ({ navigation, ...props }) => {
                                     size={size}
                                     color={'#fff'} />
                         )}
-                        label="Sleep Timer" onPress={() => null} />
+                        label="Sleep Timer" onPress={() =>navigation.navigate('SleepTimer')} />
                     <Divider style={{ width: '80%', marginHorizontal: 20 }} />
                     <DrawerItem style={styles.drawerItemStyle}
                         {...props}
@@ -111,7 +111,7 @@ const CustomDrawerContent = ({ navigation, ...props }) => {
                                     size={size}
                                     color={'#fff'} />
                         )}
-                        label="Drive Mode" onPress={() => null} />
+                        label="Drive Mode" onPress={() => navigation.navigate('DriveMode')} />
                     <Divider style={{ width: '80%', marginHorizontal: 20 }} />
                     <DrawerItem style={styles.drawerItemStyle}
                         {...props}

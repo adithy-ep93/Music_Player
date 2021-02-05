@@ -225,11 +225,11 @@ const Volume = ()=>{
   </TouchableOpacity>
   <View style={{flexDirection:'row'}}>
             <View style={{flexDirection:'column',justifyContent:'space-between',padding:20,}}>
-              <Image style={{resizeMode:'contain',width:140,height:150,}} source={require('../../assests/left.jpg')}/>
+              <Image style={{resizeMode:'contain',width:140,height:150,}} source={require('../../assets/left.jpg')}/>
               <Text style={{color:'white',fontSize:18,textAlign:'center'}}>Left</Text>
               </View>
               <View style={{flexDirection:'column',justifyContent:'space-between',padding:20}}>
-              <Image style={{resizeMode:'contain',width:140,height:150,}} source={require('../../assests/left.jpg')}/>
+              <Image style={{resizeMode:'contain',width:140,height:150,}} source={require('../../assets/left.jpg')}/>
               <Text style={{color:'white',fontSize:18,textAlign:'center'}}>Right</Text>
             </View >
             </View>

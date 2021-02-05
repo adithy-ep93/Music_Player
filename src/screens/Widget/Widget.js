@@ -7,7 +7,8 @@ import colors from '../../config/colors';
 import CustomCarousel from '../../screens/Widget/CustomCarousel';
 
 
-export default function Widget() {
+
+export default function Widget({navigation}) {
     const [imagemodalVisible, setimageModalVisible] = useState(false);
     function image() {
         setimageModalVisible(false);
@@ -16,12 +17,6 @@ export default function Widget() {
 
   const Width = Dimensions.get("window").width;
     const Height = Dimensions.get("window").height * 0.42;
-    const customImg = [
-        "require('')",
-        "https://res.cloudinary.com/simplotel/image/upload/x_0,y_615,w_4813,h_1875,c_crop,q_80,fl_progressive/w_600,h_337,f_auto,c_fit/vits-hotels/Listing_Image_skazsy",
-        "https://www.ahstatic.com/photos/9399_ho_00_p_1024x768.jpg",
-        "https://cdn.galaxy.tf/thumb/sizeW1000/uploads/2s/cms_image/001/554/973/1554973785_5caf04591c06e-thumb.jpg",
-      ];
   const [visible, setIsVisible] = useState(false);
   return (
       
@@ -36,28 +31,16 @@ export default function Widget() {
                 style={{margin:10}}
                 animationIn={'fadeIn'}
                 animationOut={'fadeOutDown'}
-                onBackdropPress={()=> setimageModalVisible(false)}>
+                onBackdropPress={()=> setimageModalVisible(false)}
+                  >
                      <View style={styles.blockModal}>
-                       <ScrollView>
-                         <CustomCarousel/>
-                        {/* <Text style={styles.effectText}>Add Widget</Text>
-                        <Text style={styles.modalText}>
-                        Step: 1 Tap and hold an empty space on home screen, you will see widgets
-                         option at the bottom of the screen</Text> */}
-                        
-        {/* <View style={{alignSelf:'center', height: Height,padding:20}}>
-        <SliderBox 
-  images={customImg}
-  sliderBoxHeight={300}
-  onCurrentImagePressed={index => console.warn(`image ${index} pressed`)}
-  dotColor="#FFF"
-  inactiveDotColor="#90A4AE"
-/>
-</View> */}
-                      </ScrollView>
-                     </View> 
-
-                </Modal>
+                     <MaterialIcons  style={{alignSelf:'flex-end'}} name="close" size={20} color="black" 
+                     onPress={()=> setimageModalVisible(false)}
+                     />
+                       <CustomCarousel/>
+                    
+                     </View>
+                    </Modal>
                  </View>  
 
     <View style={styles.headerContainer}>
@@ -70,13 +53,13 @@ export default function Widget() {
      <View style={styles.page} >
          <TouchableOpacity onPress={ () => image()}> 
      <BoxContainer style={styles.container1} ></BoxContainer>
-     <Image style={styles.imageWidget1} source={require('../../assests/widget1.jpg')} />
+     <Image style={styles.imageWidget1} source={require('../../assets/widget1.jpg')} />
      <Text style={styles.containerText} >Widget 4 x 1</Text>
      </TouchableOpacity>
      
      <TouchableOpacity onPress={ () => image()}> 
      <BoxContainer style={styles.container2}></BoxContainer>
-     <Image style={styles.imageWidget2} source={require('../../assests/widget2.jpg')}/>
+     <Image style={styles.imageWidget2} source={require('../../assets/widget2.jpg')}/>
       <Text style={styles.containerText1}>Widget 4 x 1</Text>
       </TouchableOpacity>
     </View>
@@ -84,13 +67,13 @@ export default function Widget() {
         <View style={styles.page}>
         <TouchableOpacity onPress={ () => image()}> 
       <BoxContainer style={styles.container3}></BoxContainer>
-      <Image style={styles.imageWidget3} source={require('../../assests/widget3.jpg')}/>
+      <Image style={styles.imageWidget3} source={require('../../assets/widget3.jpg')}/>
      <Text style={styles.containerText}>Widget 4 x 2</Text>
      </TouchableOpacity>
 
      <TouchableOpacity onPress={ () => image()}> 
       <BoxContainer style={styles.container4}></BoxContainer>
-      <Image style={styles.imageWidget4} source={require('../../assests/widget4.jpg')}/>
+      <Image style={styles.imageWidget4} source={require('../../assets/widget4.jpg')}/>
       <Text style={styles.containerText1}>Widget 4 x 2</Text>
       </TouchableOpacity>
         </View>
@@ -98,13 +81,13 @@ export default function Widget() {
         <View style={styles.page}>
         <TouchableOpacity onPress={ () => image()}> 
       <BoxContainer style={styles.container5}></BoxContainer>
-      <Image style={styles.imageWidget5} source={require('../../assests/widget5.jpg')}/>
+      <Image style={styles.imageWidget5} source={require('../../assets/widget5.jpg')}/>
      <Text style={styles.containerText}>Widget 4 x 4</Text>
      </TouchableOpacity>
 
      <TouchableOpacity onPress={ () => image()}> 
       <BoxContainer style={styles.container6}></BoxContainer>
-      <Image style={styles.imageWidget6} source={require('../../assests/widget6.jpg')}/>
+      <Image style={styles.imageWidget6} source={require('../../assets/widget6.jpg')}/>
       <Text style={styles.containerText1}>Widget List</Text>
       </TouchableOpacity>
         </View>
@@ -120,7 +103,7 @@ export default function Widget() {
 
 const styles = StyleSheet.create({
    container:{
-    backgroundColor:colors.secondary,
+    backgroundColor:colors.primary,
     height:'100%',
     justifyContent:'center',
     
@@ -267,9 +250,9 @@ mainStyle:{
     justifyContent:'center',
     backgroundColor:'white',
     borderRadius:4,
-    padding:20,
-    width:'85%',
-    height:400
+    padding:30,
+    width:'90%',
+    height:500
   },
   effectText:{
     fontSize:20, 

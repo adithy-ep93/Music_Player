@@ -6,7 +6,10 @@ import HomeStackNavigation from '../navigation/homestack';
 import Scan from '../screens/Scan/scan_library';
 import HomePage from '../screens/Home/home_page';
 import Settings from '../screens/Settings/settings';
-
+import EqualizerVolume from '../screens/Equalizer/EqualizerVolume';
+import Widget from '../screens/Widget/Widget';
+import SleepTimer from '../screens/SleepTimer';
+import DriveMode from '../screens/DriveMode';
 
 import CustomDrawerContent from './drawer_content';
 
@@ -30,7 +33,10 @@ export default function MainNavigation() {
                 {/* <Drawer.Screen name="Status" component={Status} />
                 <Drawer.Screen name="Invites" component={Invites} />
                 <Drawer.Screen name="Archived" component={Archived} /> */}
-
+                  <Drawer.Screen name="EqualizerVolume" component={EqualizerVolume} />
+                  <Drawer.Screen name="Widget" component={Widget} />
+                  <Drawer.Screen name="SleepTimer" component={SleepTimer} />
+                  <Drawer.Screen name="DriveMode" component={DriveMode} />
 
             </Drawer.Navigator>
         </NavigationContainer >
