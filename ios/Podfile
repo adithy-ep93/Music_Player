@@ -18,6 +18,8 @@ target 'musicplayer' do
   pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
   pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
 
+  pod 'RNCCheckbox', :path => '../node_modules/@react-native-community/checkbox'
+
   target 'musicplayerTests' do
     inherit! :complete
     # Pods for testing

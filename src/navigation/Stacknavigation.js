@@ -36,12 +36,17 @@ const HomeScreenStack = () => {
             <Stack.Screen name="Settings" component={Settings} options={{ headerShown: false }} />
 
            <Stack.Screen name="Download" component={Download} options={{ headerShown: false }} />
+<<<<<<< HEAD
            <Stack.Screen name="Music" component={Music} options={{ headerShown: false }} />
            <Stack.Screen name="Sound" component={Sound} options={{ headerShown: false }} />
            <Stack.Screen name="WhatsAppAudio" component={WhatsAppAudio} options={{ headerShown: false }} />
           
            
             
+=======
+            <Stack.Screen name="RecentAdd" component={RecentAdd} options={{ headerShown: false }} /> 
+         
+>>>>>>> sharonkurian
            
         </Stack.Navigator>
         </NavigationContainer>

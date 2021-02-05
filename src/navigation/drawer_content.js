@@ -56,6 +56,7 @@ const CustomDrawerContent = ({ navigation, ...props }) => {
                         label="Equilizer"
                         onPress={() => navigation.navigate("Equalizer")}
                     />
+                     
                     <Divider style={{ width: '80%', marginHorizontal: 20 }} />
                     <DrawerItem
                         style={styles.drawerItemStyle}
