@@ -9,6 +9,8 @@ import Favhome from './src/screens/Favourite/favhome';
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import My from './src/screens/my';
+
 /*
 const App = () => {
   return (<View><Aads/></View>);
