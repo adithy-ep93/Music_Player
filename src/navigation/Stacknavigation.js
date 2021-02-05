@@ -28,6 +28,7 @@ const HomeScreenStack = () => {
            <Stack.Screen name="Folder" component={Folder} options={{ headerShown: false }} />
            <Stack.Screen name="Download" component={Download} options={{ headerShown: false }} />
             <Stack.Screen name="RecentAdd" component={RecentAdd} options={{ headerShown: false }} /> 
+         
            
         </Stack.Navigator>
         </NavigationContainer>

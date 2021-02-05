@@ -14,7 +14,7 @@ const StatusBarHeight = StatusBar.currentHeight;
 const USERS = new UserData();
 const Frequent_Users = USERS.FrequentUsers;
 
-const HomeScreen = () => {
+const Searchlibrary = () => {
     const [modalVisible, setModalVisible] = useState(true);
     //const navigation = useNavigation();
 
@@ -127,4 +127,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default HomeScreen;
+export default Searchlibrary;

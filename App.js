@@ -6,15 +6,16 @@ import Colors from './src/config/colors';
  import Mostplay from './src/screens/search/Mostplay';
  import Defaultlist from './src/screens/search/Defaultlist';
  import Pickfromnet from './src/screens/search/Pickfromnet';
- import Index from './src/screens/search/Index';
+ import Searchlibrary from './src/screens/search/Searchlibrary';
  import Songselected from './src/screens/search/Songselected';
 
 const App = () => {
   return (
- <Index/>
+  <Searchlibrary/>
    //<Songselected/>
    //<Defaultlist/>
    //<Pickfromnet/>
+   //<MainNavigation/>
   );
 };
 

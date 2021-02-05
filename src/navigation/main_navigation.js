@@ -9,7 +9,7 @@ import Settings from '../screens/Settings/settings';
 
 
 import CustomDrawerContent from './drawer_content';
-import contactlibrary from './../components/contactlibrary';
+//import contactlibrary from './../components/contactlibrary';
 
 const Drawer = createDrawerNavigator();
 
@@ -27,7 +27,7 @@ export default function MainNavigation() {
                 <Drawer.Screen name="Home" component={HomeStackNavigation} />
                 <Drawer.Screen name="Scan" component={Scan} />
                 <Drawer.Screen name="Settings" component={Settings} />
-                <Drawer.Screen name="contactlibrary" component={contactlibrary} />
+                 {/*<Drawer.Screen name="contactlibrary" component={contactlibrary} />*/}
                 {/* <Drawer.Screen name="Guidlines" component={Guidlines} /> */}
                 {/* <Drawer.Screen name="Status" component={Status} />
                 <Drawer.Screen name="Invites" component={Invites} />

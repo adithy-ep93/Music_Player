@@ -13,9 +13,10 @@ import Folder from '../screens/pages/Folder';
 // import Download from '../screens/Pages/Audiofiles/Download';
 import RecentAdd from '../screens/pages/RecentAdd';
 import Favhome from '../screens/Favourite/favhome';
-import Mostplay from '../screens/Mostplay';
-import Defaultlist from '../screens/Defaultlist';
-import Recentplay from '../screens/Recentplay';
+import Mostplay from '../screens/search/Mostplay';
+import Defaultlist from '../screens/search/Defaultlist';
+import Recentplay from '../screens/search/Recentplay';
+
 
 
 const Stack = createStackNavigator();
@@ -35,6 +36,7 @@ const HomeStackNavigation = () => {
             <Stack.Screen name="Defaultlist" component={Defaultlist} options={{ headerShown: false }} />
             <Stack.Screen name="RecentAdd" component={RecentAdd} options={{ headerShown: false }} />
             <Stack.Screen name="Recentplay" component={Recentplay} options={{ headerShown: false }} />
+            
            
         </Stack.Navigator>
       

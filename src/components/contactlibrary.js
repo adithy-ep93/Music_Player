@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { StyleSheet, Text, TextInput,View, Image, Pressable,TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, TextInput,View, Image, Pressable,TouchableOpacity,ScrollView} from 'react-native';
 import mainStyle from '../config/styles';
 import CheckBox from '@react-native-community/checkbox';
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -19,10 +19,12 @@ import RadioButtonRN from 'radio-buttons-react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer} from '@react-navigation/native';
 import RoundCheckbox from 'rn-round-checkbox';
+//import Stacknavigation from '../navigation/Stacknavigation';
+
 
 const Stack = createStackNavigator();
 
-const ContactTile = ({ data, id,name, subname,size,time,album,artist,genre, rightname, onPress,navigation,}) => {
+const ContactTile = ({ data, id,name, subname,size,time,album,artist,genre, rightname, onPress,navigation}) => {
     const [customModalVisible, setcustomModalVisible] = useState(false);
     const [editModalVisible, seteditModalVisible] = useState(false);
     const [artworkModalVisible, setartworkModalVisible] = useState(false);
@@ -56,6 +58,9 @@ const ContactTile = ({ data, id,name, subname,size,time,album,artist,genre, righ
     function edit(){
         
         seteditModalVisible(true);
+        //setcustomModalVisible(false);
+       // customModalVisible(false)
+
        /* setcustomModalVisible(false);
         seteditModalVisible(false);
         setartworkModalVisible(false);
@@ -344,7 +349,9 @@ const ContactTile = ({ data, id,name, subname,size,time,album,artist,genre, righ
                             <View style={styles.shareModal}>
                                 <View style={{alignItems:"center",justifyContent:"center"}}>
                                     <Text style={{ color: 'black', fontSize: 18,marginTop:"6%",alignContent:"center"}}>Share</Text>
+                                    
                                     <View style={{flex:1,paddingTop:10,flexDirection:"row",marginRight:"4%",marginBottom:"10%",marginTop:"5%",justifyContent:"space-between"}}>
+                                       
                                         <View style={{marginRight:15,alignItems:"center",marginLeft:0}}>
                                             <Image  style={{width: 47,height: 50,}} source={require('../assets/contact_images/whatsapp.png')}/>
                                             <Text style={{paddingTop:10}}>Whatspp</Text>
@@ -382,12 +389,15 @@ const ContactTile = ({ data, id,name, subname,size,time,album,artist,genre, righ
                                         </View>
                                     </View>
                                     
+                                    
                                     <TouchableOpacity onPress={()=> setshareModalVisible(false)}>
                                         <View style={{width:250,borderRadius:40,borderColor:"whitesmoke",backgroundColor:"whitesmoke",height:40,justifyContent:"center",borderWidth:1,marginBottom:"8%"}}>
                                             <Text style={{fontSize:18,color:"black",alignSelf:"center"}}>    Cancel   </Text>
                                         </View>
                                     </TouchableOpacity>
-                                </View>  
+                                </View> 
+                                
+                                
                             </View>
                             </Modal>
                             {/* Modal for share section ends here*/}
