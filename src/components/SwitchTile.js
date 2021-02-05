@@ -14,7 +14,7 @@ const SwitchTile = ({text, subText}) =>{
   return (
    <TouchableOpacity onPress={()=> onSwitch()}>
 
-      <View style={{ backgroundColor:Colors.secondary, width:'100%'}}>
+      <View style={{  backgroundColor:colors.primary, width:'100%'}}>
           <View style={style.switch}>
               <View>
                   <Text style={style.text}>{text}</Text>
@@ -48,7 +48,7 @@ const style = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     height: 55,
-    backgroundColor:Colors.secondary,
+    backgroundColor:colors.primary,
     // paddingLeft: 5,
     // marginBottom:10,
     marginLeft:20,

@@ -309,11 +309,11 @@ import VerticalSlider from 'rn-vertical-slider';
             </View>
       <View style={{flexDirection:'row'}}>
             <View style={{flexDirection:'column',justifyContent:'space-between',padding:20,}}>
-              <Image style={{resizeMode:'contain',width:140,height:150,}} source={require('../../assests/left.jpg')}/>
+              <Image style={{resizeMode:'contain',width:140,height:150,}} source={require('../../assets/left.jpg')}/>
               <Text style={{color:'white',fontSize:18,textAlign:'center'}}>Bass</Text>
               </View>
               <View style={{flexDirection:'column',justifyContent:'space-between',padding:20}}>
-              <Image style={{resizeMode:'contain',width:140,height:150,}} source={require('../../assests/left.jpg')}/>
+              <Image style={{resizeMode:'contain',width:140,height:150,}} source={require('../../assets/left.jpg')}/>
               <Text style={{color:'white',fontSize:18,textAlign:'center'}}>Virtualizer</Text>
             </View >
             </View>
