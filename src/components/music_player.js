@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView, FlatList,TextInput } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView, FlatList, TextInput, ToastAndroid } from 'react-native';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -9,6 +9,7 @@ import Modal from 'react-native-modal';
 import Colors from '../config/colors';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Divider } from 'react-native-elements';
 
 const DATA = require('../components/data.json');
 
@@ -101,10 +102,14 @@ const Item = ({ item, onPress, style }) => (
 
 const Music = () => {
     const [addmodalVisible, setAddModalVisible] = useState(false);
+    const [deletemodalVisible, setDeleteModalVisible] = useState(false);
     const [isModalVisible, setModalVisible] = useState(false);
     const [selectedId, setSelectedId] = useState(null);
     const [addPlaylistModalVisible, setAddPlaylistModalVisible] = useState(false);
     const [text, setText] = useState('New list 1');
+    const showToast = () => {
+        ToastAndroid.show("Succeed !", ToastAndroid.SHORT);
+      };
 
     const renderItem = ({ item }) => {
         return (
@@ -283,7 +288,7 @@ const Music = () => {
                                     size={30}
                                     color={'#fff'} />
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => null}>
+                            <TouchableOpacity onPress={() => setDeleteModalVisible(true)}>
                                 <MaterialCommunityIcons
                                     name="delete"
                                     size={30}
@@ -338,12 +343,36 @@ const Music = () => {
                                 </TouchableOpacity>
                             </View>
                         </View>
+
+                        {/* Favourites */}
+                        <View style={{ marginTop: 20 }}>
+                            <TouchableOpacity onPress={()=> showToast()}>
+                                <View style={styles.check}>
+                                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                        <View style={styles.folder}>
+                                            <MaterialCommunityIcons
+                                                name="playlist-music-outline"
+                                                size={40}
+                                                color={'#fff'}
+                                            />
+                                        </View>
+                                        <View style={styles.folderData}>
+                                            <Text style={{ fontSize: 18, color: '#fff' }}>Favourite</Text>
+                                            <Text style={{ fontSize: 14, color: '#fff' }}>10 songs</Text>
+
+                                        </View>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+
+                        </View>
+                        <Divider style={{ marginHorizontal: 20, marginVertical: 7 }} />
                     </View>
                 </Modal>
             </View>
 
-             {/* AddModal */}
-             <Modal
+            {/* AddModal */}
+            <Modal
                 isVisible={addmodalVisible}
                 style={{ margin: 0 }}
                 animationOut={'fadeOut'}
@@ -371,6 +400,30 @@ const Music = () => {
                         </TouchableOpacity>
                         <Text style={{ fontSize: 18 }}>OK</Text>
                     </View>
+                </View>
+            </Modal>
+
+            {/* DeleteModal */}
+            <Modal
+                isVisible={deletemodalVisible}
+                style={{ margin: 0 }}
+                animationIn={"fadeIn"}
+                animationOut={'fadeOut'}
+                backdropOpacity={0.3}
+                onBackdropPress={() => setDeleteModalVisible(false)}>
+                <View style={styles.deleteModal}>
+                    <Text style={{ fontSize: 20, fontWeight:'700' }}>Clear</Text>
+                    <Text style={{ fontSize: 18 }}>are you sure to clear the current list?</Text>
+                    <View style={{flexDirection:'row', alignSelf:'flex-end', alignItems:'center', justifyContent:'space-between', width:'50%'}}>
+                    <TouchableOpacity>
+                    <Text style={{ fontSize: 18, color:'blue' }}>CANCEL</Text>
+                    </TouchableOpacity>
+                   <TouchableOpacity onPress={()=> setDeleteModalVisible(false)}>
+                   <Text style={{ fontSize: 18, color:'blue' }}>CLEAR</Text>
+                   </TouchableOpacity>
+                    </View>
+                   
+                    
                 </View>
             </Modal>
 
@@ -482,12 +535,38 @@ const styles = StyleSheet.create({
         height: '30%',
         paddingBottom: 20
     },
+    deleteModal: {
+        width: '80%',
+        borderRadius: 5,
+        backgroundColor: '#fff',
+        alignSelf: 'center',
+        padding: 20,
+        height: '25%',
+        paddingBottom: 20,
+        justifyContent:'space-evenly'
+    },
     textfield: {
 
         height: 40,
         width: '100%',
         borderBottomWidth: 1,
         borderBottomColor: 'blue',
+    },
+    check: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: 20,
+    },
+    folder: {
+        width: 50,
+        height: 50,
+        backgroundColor: 'grey',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    folderData: {
+        width: '80%',
+        paddingHorizontal: 20
     },
 })
 
