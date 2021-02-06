@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {View,Text,StyleSheet,TouchableOpacity,Image} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-import colors from '../config/colors';
+import Colors from '../config/colors';
 
 const DriveMode =({navigation}) =>{
     const [savemodalVisible,setsaveModalVisible]=useState(false);
@@ -80,7 +80,7 @@ const styles=StyleSheet.create({
 
     okButtonContainer1: {
         height: 45,
-        backgroundColor:colors.primary,
+        backgroundColor:Colors.primary,
         borderRadius: 4,
         margin: 5,
         justifyContent: 'space-between',
@@ -109,7 +109,7 @@ const styles=StyleSheet.create({
         width: '100%',
         alignItems: 'center',
         paddingLeft: 15,
-        backgroundColor:colors.primary,
+        backgroundColor:Colors.primary,
     },
     mainStyle:{
         color:'white',

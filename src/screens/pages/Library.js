@@ -11,7 +11,6 @@ import ContactTile from '../../components/contactTile';
 import Colors from '../../config/colors';
 
 import UserData from './data';
-import { color } from 'react-native-reanimated';
 const USERS = new UserData();
 const Frequent_Users = USERS.FrequentUsers;
 

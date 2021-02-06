@@ -7,11 +7,12 @@ import Colors from '../config/colors';
 import HomePage from '../screens/Home/home_page';
 import Folder from '../screens/pages/Folder';
 import Library from '../screens/pages/Library';
-import Mostplay from '../screens/Mostplay';
-import Recentplay from '../screens/Recentplay';
-import Defaultlist from '../screens/Defaultlist';
+import Mostplay from '../screens/search/Mostplay';
+import Recentplay from '../screens/search/Recentplay';
+import Defaultlist from '../screens/search/Defaultlist';
 import Favhome from '../screens/Favourite/favhome';
 import RecentAdd from '../screens/pages/RecentAdd';
+import Searchlibrary from '../screens/search/Searchlibrary'; 
 
 
 const Stack = createStackNavigator();
@@ -31,6 +32,7 @@ const HomeStackNavigation = () => {
             <Stack.Screen name="Defaultlist" component={Defaultlist} options={{ headerShown: false }} />
             <Stack.Screen name="Recentplay" component={Recentplay} options={{ headerShown: false }} />
             <Stack.Screen name="RecentAdd" component={RecentAdd} options={{ headerShown: false }} />
+            <Stack.Screen name="Searchlibrary" component={Searchlibrary} options={{ headerShown: false }} />
            
         </Stack.Navigator>
       

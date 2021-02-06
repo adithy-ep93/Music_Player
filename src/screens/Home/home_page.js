@@ -40,10 +40,10 @@ const HomePage = ({ navigation }) => {
                 <View style={styles.headerTitle}>
                     <Text style={{ fontSize: 25, color: '#fff' }}>Music Player</Text>
                     <View style={styles.headIcons}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=> navigation.navigate("Aads")}>
                             <MaterialCommunityIcons name="gift" size={25} color={'#fff'} />
                         </TouchableOpacity>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=> navigation.navigate("Searchlibrary")}>
                             <MaterialIcons name="search" size={25} color={'#fff'} />
                         </TouchableOpacity>
                     </View>
@@ -246,13 +246,13 @@ const HomePage = ({ navigation }) => {
                             </View>
                             <View style={{ justifyContent: 'center', width: '50%', height: '100%', paddingLeft: 5 }}><Text style={{ fontSize: 25, color: '#fff' }}>Default List</Text></View>
                             <View style={{ width: '45%', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', height: '100%', paddingHorizontal: 10, }}>
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={()=> navigation.navigate("Aads")}>
                                     <MaterialCommunityIcons
                                         name="gift"
                                         size={25}
                                         color={'#fff'} />
                                 </TouchableOpacity>
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={()=> navigation.navigate("Searchlibrary")}>
                                     <MaterialIcons
                                         name="search"
                                         size={25}

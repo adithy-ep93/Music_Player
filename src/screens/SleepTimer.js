@@ -87,7 +87,7 @@ return(
 
 const styles = StyleSheet.create({
   mycontainer: {
-  backgroundColor:colors.primary,
+  backgroundColor:Colors.primary,
   height:'100%'
   },
   headerContainer: {

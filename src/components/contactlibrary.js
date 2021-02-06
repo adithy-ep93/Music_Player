@@ -1,6 +1,5 @@
 import React,{useState} from 'react';
 import { StyleSheet, Text, TextInput,View, Image, Pressable,TouchableOpacity,ScrollView} from 'react-native';
-import mainStyle from '../config/styles';
 import CheckBox from '@react-native-community/checkbox';
 import Entypo from 'react-native-vector-icons/Entypo';
 import DividerTile from './divider';
@@ -19,6 +18,7 @@ import RadioButtonRN from 'radio-buttons-react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer} from '@react-navigation/native';
 import RoundCheckbox from 'rn-round-checkbox';
+import Colors from '../config/colors';
 //import Stacknavigation from '../navigation/Stacknavigation';
 
 
@@ -600,7 +600,7 @@ const styles = StyleSheet.create({
        
     },
     circle: {
-        backgroundColor: mainStyle.colors.primary,
+        backgroundColor: Colors.primary,
         height: 50,
         width: 50,
         borderRadius: 50 / 2,

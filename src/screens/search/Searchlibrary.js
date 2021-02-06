@@ -3,12 +3,13 @@ import { View, Text, StyleSheet, StatusBar, TouchableOpacity, FlatList,TextInput
 //import { useNavigation } from '@react-navigation/native';
 import Modal from 'react-native-modal';
 import Feather from 'react-native-vector-icons/Feather';
-import mainStyle from '../../config/styles';
 import Ripple from 'react-native-material-ripple';
 import ContactTile from '../../components/contactlibrary';
 import UserData from './data';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Colors from '../../config/colors';
+import {useNavigation} from '@react-navigation/native';
 
 const StatusBarHeight = StatusBar.currentHeight;
 const USERS = new UserData();
@@ -16,7 +17,8 @@ const Frequent_Users = USERS.FrequentUsers;
 
 const Searchlibrary = () => {
     const [modalVisible, setModalVisible] = useState(true);
-    //const navigation = useNavigation();
+
+    const navigation = useNavigation();
 
     const renderItem = ({ item }) => (
         <ContactTile
@@ -45,7 +47,7 @@ const Searchlibrary = () => {
                         
                         {/* Header session starts here */}
                         <View style={styles.headerContainer}>
-                            <Ripple>
+                            <Ripple onPress={()=> navigation.goBack(null)}>
                                 <Feather name="arrow-left" style={{color:"white",paddingLeft:10}} size={30} color="#fff" />
                             </Ripple>
                             <TextInput placeholder="Search Library" style={{ lineHeight: 700,fontSize: 17,width:600,paddingRight:60,paddingLeft:10}} placeholderTextColor="white" underlineColorAndroid='white' color="white"  />  
@@ -102,7 +104,7 @@ const styles = StyleSheet.create({
         height: 55,
         borderRadius: 55 / 2,
         elevation: 10,
-        backgroundColor: mainStyle.colors.primary,
+        backgroundColor: Colors.primary,
         alignItems: 'center',
         justifyContent: 'center'
     },

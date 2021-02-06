@@ -8,7 +8,6 @@ return (
   
               {props.children}
               </View>
-
     );
 
 };

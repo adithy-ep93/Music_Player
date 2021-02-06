@@ -13,7 +13,7 @@ const Aads = () => {
 
 
         <View style={{alignItems:'center'}}>
-          <StatusBar backgroundColor="white" translucent={true} />
+         
             <View style={{ alignItems: 'center',height:60,flexDirection:'row',right: 110,justifyContent:'space-between'}}>
             <TouchableOpacity onPress={()=>navigation.goBack(null)}>
             <AntDesign
@@ -30,7 +30,7 @@ const Aads = () => {
                 
          <ScrollView>
              
-            <View style={{width: 340,height:260,borderWidth: 1,borderColor: 'white',backgroundColor: 'white',borderRadius: 14}}>
+            <View style={{width: 340,height:260,borderWidth: 1,borderColor: 'white',backgroundColor: 'white',borderRadius: 14, paddingHorizontal:10}}>
                <Text style={{ fontSize: 15,color: 'black',left:12,padding:5}}>Recommended</Text>
               <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
                <TouchableOpacity>

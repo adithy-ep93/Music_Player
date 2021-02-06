@@ -6,19 +6,14 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Octicons from 'react-native-vector-icons/Octicons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-<<<<<<< HEAD:src/screens/Recentplay.js
-import Colors from '../config/colors';
+import Colors from '../../config/colors';
 import {useNavigation} from '@react-navigation/native';
-=======
 import Modal from 'react-native-modal';
->>>>>>> sharonkurian:src/screens/search/Recentplay.js
 
 
 
 const Recentplay = () => {
-<<<<<<< HEAD:src/screens/Recentplay.js
   const navigation = useNavigation();
-=======
 
   const [recentplayModalVisible, setrecentplayModalVisible] = useState(false);
 
@@ -27,7 +22,6 @@ const Recentplay = () => {
     setrecentplayModalVisible(true);
   };
 
->>>>>>> sharonkurian:src/screens/search/Recentplay.js
   return (
 
     /* Main view starts here */
@@ -87,12 +81,8 @@ const Recentplay = () => {
           {/* View for header ends here */}
 
           {/* view for main content starts here */}
-<<<<<<< HEAD:src/screens/Recentplay.js
 
           <View style={{backgroundColor:Colors.primary,alignItems:"center",justifyContent:'center',height:'100%'}}>
-=======
-          <View style={{backgroundColor:"steelblue",height:"100%",alignItems:"center",}}>
->>>>>>> sharonkurian:src/screens/search/Recentplay.js
             <View style={{flex:1,flexDirection:"column"}}>
               <Ionicons name='musical-notes-outline'style={{color:"white",alignSelf:"auto",marginTop:137,marginLeft:100,marginRight:100}} size={90} />
               <Text style={{color:"white",fontSize:17,paddingTop:10,alignSelf:'center'}}>No music found</Text>
