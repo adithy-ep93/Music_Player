@@ -35,7 +35,7 @@ const Library = () => {
 
             {/*Header */}
         <View style={styles.headerContainer}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=> navigation.goBack(null)}>
            <MaterialIcons name="arrow-back" size={20} color="#fff"/></TouchableOpacity>
             <View style={styles.innerContainer}>
                 <View style={styles.nameContainer}>
@@ -46,7 +46,7 @@ const Library = () => {
              <TouchableOpacity><Entypo name="dots-three-vertical" size={20} color="#fff" style={{marginRight:16}}/></TouchableOpacity>
         </View>
               {/*TAB */}
-        <View style={{backgroundColor:'#4682B4',flexDirection:'row', justifyContent:'space-evenly',marginVertical:15}}>
+        <View style={{backgroundColor:Colors.primary,flexDirection:'row', justifyContent:'space-evenly',marginVertical:15}}>
               <TouchableOpacity  >
                 <Text style={{color:'yellow'}}>TRACKS</Text>
                 </TouchableOpacity>
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 55,
     // backgroundColor: colors.primary,
-    backgroundColor:'#4682B4',
+    backgroundColor:Colors.primary,
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingBottom: 5,
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
         color:'#fff'
       },
    list:{
-        backgroundColor:'#87CEFA'
+        backgroundColor:Colors.primary
       },
    newIconContainer: {
         position: 'absolute',

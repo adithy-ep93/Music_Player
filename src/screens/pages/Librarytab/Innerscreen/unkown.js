@@ -17,6 +17,8 @@ import ContactTile from '../../../../components/contactTile';
 import UserData from '../../data';
 
 
+
+
 const StatusBarHeight = StatusBar.currentHeight;
 const USERS = new UserData();
 const Frequent_Users = USERS.FrequentUsers;
@@ -45,12 +47,11 @@ const renderItem = ({ item }) => (
         />
     );
 return(
- <View style={{flex:1, alignItems:'center',paddingTop: StatusBarHeight, backgroundColor:'#87CEFA'}}>
+ <View style={{flex:1, alignItems:'center',backgroundColor:'#87CEFA'}}>
           <ScrollView>
-            <StatusBar backgroundColor="rgba(0,0,0,0.2)" translucent={true} />
-            
+           
        <View style={{opacity:0.8}}>
-            <ImageBackground style={{ height: imageHeight, width: imageWidth }} source={require('../../../../assests/music/person.png')}>
+            <ImageBackground style={{ height: imageHeight, width: imageWidth }} source={require('../../../../assets/contact_images/person1.png')}>
                
                <TouchableOpacity  onPress={()=> navigation.goBack(null)}>
                     <MaterialIcons name="arrow-back" size={25} color="#fff" style={{marginLeft:16,padding:10}}/>
@@ -64,7 +65,7 @@ return(
                         <Entypo name="dots-three-vertical" size={25} color="#fff"/>
                         </TouchableOpacity> 
                             </View>
-                <Text style={style.head}>Unknown</Text>
+                <Text style={styles.head}>Unknown</Text>
               </ImageBackground>
      </View>
 
@@ -83,7 +84,7 @@ return(
                   >
                     <ImageBackground 
                     style={{width:100,height:100,borderRadius:20}}
-                     source={require("../../../../assests/music/album1.png")}>
+                     source={require("../../../../assets/contact_images/person1.png")}>
                        <View style={{marginVertical:61,backgroundColor:'#87CEFA',opacity:0.7,width:150}}>
                                 <Text>Download</Text>
                                 <Text>2 songs</Text>
@@ -96,7 +97,7 @@ return(
                 >
                     <ImageBackground 
                     style={{borderRadius:20,width:110,height:100,}}
-                    source={require("../../../../assests/music/album1.png",)}>
+                    source={require("../../../../assets/contact_images/person1.png",)}>
                           <View style={{marginVertical:61,backgroundColor:'#87CEFA',opacity:0.8,width:150}}>
                           <Text>Sounds</Text>
                             <Text>6 songs</Text>
@@ -113,7 +114,7 @@ return(
                         >
                             <ImageBackground 
                             style={{borderRadius:20,width:105,height:100,}}
-                            source={require("../../../../assests/music/album1.png")}>
+                            source={require("../../../../assets/contact_images/person1.png")}>
                                 <View style={{marginVertical:61,backgroundColor:'#87CEFA',opacity:0.7,width:150}}>
                                 <Text>WhatsAppAudio</Text>
                                 <Text>6 songs</Text>
@@ -226,7 +227,7 @@ return(
 
 export default Unknown;
 
-const style= StyleSheet.create({
+const styles= StyleSheet.create({
     headerContainer: {
         flexDirection: 'row',
         width: '100%',

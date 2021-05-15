@@ -27,24 +27,24 @@ const Recentplay = () => {
     /* Main view starts here */
 
     <View>
-      <StatusBar backgroundColor="slategray" translucent={true} />
-
         {/* view for header starts here */}
           <View>
-            <View style={{height:80,backgroundColor:Colors.primary,paddingHorizontal:5,flexDirection:"row",paddingTop:15,alignItems:"center",elevation:5}}>
+            <View style={{height:55,backgroundColor:Colors.primary,paddingHorizontal:5,flexDirection:"row",alignItems:"center",elevation:5,justifyContent:'space-evenly'}}>
               <TouchableOpacity onPress={()=> navigation.goBack(null)}>
-                <Feather name="arrow-left" style={{color:"white",paddingLeft:10}} size={30} color="#fff" />
+                <Feather name="arrow-left" style={{color:"white",}} size={20} color="#fff" />
               </TouchableOpacity>
-                <Text style={{ fontSize: 20,fontWeight:"bold",alignContent:"center",paddingLeft:32,color:"white"}} >RECENT PLAY</Text>  
-              <TouchableOpacity>
+                <Text style={{ fontSize: 20,alignContent:"center",color:"white"}} >Recent Play</Text>  
+              <View style={{width:'40%', alignItems:'center', justifyContent:'space-evenly', flexDirection:'row'}}>
+              <TouchableOpacity onPress={()=> navigation.navigate("Aads")}>
                 <Octicons name="gift" style={{color:"white",paddingLeft:40}} size={25} color="#fff" />
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={()=> navigation.navigate("Searchlibrary")}>
                 <EvilIcons name="search" style={{color:"white",paddingLeft:20}} size={30} color="#fff" />
               </TouchableOpacity>
               <TouchableOpacity onPress={() =>recentplay()}>
                 <Entypo name='dots-three-vertical'style={{color:"white",paddingLeft:14}} size={20} />
               </TouchableOpacity>
+              </View>
 
               {/* Modal for recent play section starts here*/}
               <Modal
@@ -59,7 +59,9 @@ const Recentplay = () => {
               <View style={styles.recentplayModal}>
                 <View style={{marginBottom:"1%",paddingTop:'10%'}}>
                   <View style={{flex:1,paddingTop:20}}>
+                    <TouchableOpacity>
                     <Text style={{fontSize:16,color: 'black',}}>Edit</Text>
+                    </TouchableOpacity>
                   </View>
                   <View style={{flex:1}}>
                     <TouchableOpacity>
@@ -100,16 +102,17 @@ const Recentplay = () => {
 const styles = StyleSheet.create({
 
   recentplayModal: {
-    width: '60%',
+    width: '50%',
     backgroundColor: 'white',
     height: '30%',
     position: 'absolute',
     bottom:0,
-    top:50 ,
-    left:140,
+    top:10 ,
+    right:5,
     alignItems: 'flex-start',
     paddingLeft:'10%',
     justifyContent: 'center',
+    borderRadius:4
    // paddingBottom:15,
    //marginBottom:"20%"
    

@@ -13,6 +13,9 @@ import Defaultlist from '../screens/search/Defaultlist';
 import Favhome from '../screens/Favourite/favhome';
 import RecentAdd from '../screens/pages/RecentAdd';
 import Searchlibrary from '../screens/search/Searchlibrary'; 
+import Pickfromnet from '../screens/search/Pickfromnet';
+import Tabnavigation from './Tabbar';
+
 
 
 const Stack = createStackNavigator();
@@ -33,6 +36,9 @@ const HomeStackNavigation = () => {
             <Stack.Screen name="Recentplay" component={Recentplay} options={{ headerShown: false }} />
             <Stack.Screen name="RecentAdd" component={RecentAdd} options={{ headerShown: false }} />
             <Stack.Screen name="Searchlibrary" component={Searchlibrary} options={{ headerShown: false }} />
+            <Stack.Screen name="Pickfromnet" component={Pickfromnet} options={{ headerShown: false }} />
+            <Stack.Screen name="Tabnavigation" component={Tabnavigation} options={{ headerShown: false }} />
+            
            
         </Stack.Navigator>
       

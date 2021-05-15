@@ -48,16 +48,14 @@ const Searchlibrary = () => {
                         {/* Header session starts here */}
                         <View style={styles.headerContainer}>
                             <Ripple onPress={()=> navigation.goBack(null)}>
-                                <Feather name="arrow-left" style={{color:"white",paddingLeft:10}} size={30} color="#fff" />
+                                <Feather name="arrow-left" style={{color:"white",paddingLeft:10, paddingRight:10}} size={20} color="#fff" />
                             </Ripple>
                             <TextInput placeholder="Search Library" style={{ lineHeight: 700,fontSize: 17,width:600,paddingRight:60,paddingLeft:10}} placeholderTextColor="white" underlineColorAndroid='white' color="white"  />  
                         </View>
-                        <View elevation={3} style={{ flexDirection:"row",paddingRight:20,width: "100%",backgroundColor: "steelblue", color:"white",           // borderColor: "black",
+                        <View elevation={3} style={{ flexDirection:"row",paddingRight:20,width: "100%",backgroundColor: Colors.primary, color:"white",           // borderColor: "black",
                         alignSelf: "center"}}>
                             <Text style={{  fontSize: 18,color:"white", fontFamily:"default",paddingBottom:10,paddingLeft:10,fontSize: 40, fontWeight: 'bold', flex: 1, alignSelf: "flex-start", paddingTop: 10, fontSize:20}}>Tracks</Text>
-                            <TouchableOpacity>
-                                <MaterialIcons name='keyboard-arrow-up' style={{ color:"white",paddingTop:10}} size={26}/>
-                            </TouchableOpacity>    
+                             
                         </View>
                         {/* Header session ends here */}
 
@@ -81,7 +79,7 @@ const styles = StyleSheet.create({
     headerContainer: {
         flexDirection: 'row',
         height: 55 + StatusBarHeight,
-        backgroundColor: 'slategray',
+        backgroundColor: Colors.primary,
         alignItems: 'center',
         paddingTop: StatusBarHeight
     },

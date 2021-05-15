@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, Switch, TouchableOpacity} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Colors from '../config/colors';
 
 const CheckBoxTile = ({text, subText,third}) =>{
   const [isEnabled, setIsEnabled] = useState(false);
@@ -14,7 +15,7 @@ const CheckBoxTile = ({text, subText,third}) =>{
   return (
    <TouchableOpacity  onPress={()=> onSwitch()}>
 
-      <View style={{backgroundColor:'#4682B4', width:'100%'}}>
+      <View style={{backgroundColor:Colors.primary, width:'100%'}}>
           <View style={style.check}>
               <View style={{marginTop:20}}>
                   <Text style={style.text}>{text}</Text>
@@ -45,7 +46,7 @@ const style = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     height: 47,
-    backgroundColor: '#4682B4',
+    backgroundColor: Colors.primary,
     paddingLeft: 5,
     marginBottom:20,
    

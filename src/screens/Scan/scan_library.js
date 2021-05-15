@@ -38,11 +38,11 @@ const Scan = () => {
         <TouchableOpacity onPress={() => navigation.goBack(null)}>
           <MaterialIcons
             name="arrow-back"
-            size={25}
+            size={20}
             color={'#fff'} />
         </TouchableOpacity>
         <View style={styles.headerTitle}>
-          <Text style={{ color: '#fff', fontSize: 25 }}>Scan Library</Text>
+          <Text style={{ color: '#fff', fontSize: 20 }}>Scan Library</Text>
           <TouchableOpacity onPress={() => setRightModalVisible(true)}>
             <Ionicons
               name="ios-settings-outline"
@@ -52,7 +52,8 @@ const Scan = () => {
         </View>
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View
+       <View style={{alignItems:'center', justifyContent:'center'}}>
+       <View
           style={{ height: 300, alignItems: 'center', justifyContent: 'center' }}>
           {/* circleScan */}
           <View style={styles.circle}>
@@ -66,7 +67,7 @@ const Scan = () => {
         <Text
           style={{
             color: '#fff',
-            fontSize: 18,
+            
             marginTop: 20,
             alignSelf: 'center',
           }}>
@@ -86,7 +87,7 @@ const Scan = () => {
 
               />
               <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <Text style={{ fontSize: 18, color: '#fff' }}>
+                <Text style={{ color: '#fff' }}>
                   Exclude songs less than{' '}
                 </Text>
                 <TextInput
@@ -94,7 +95,7 @@ const Scan = () => {
                   defaultValue={text1}
                   style={styles.textfield}
                 />
-                <Text style={{ fontSize: 18, color: '#fff' }}>seconds</Text>
+                <Text style={{  color: '#fff' }}>seconds</Text>
               </View>
             </View>
           </TouchableOpacity>
@@ -112,7 +113,7 @@ const Scan = () => {
               />
 
               <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <Text style={{ fontSize: 18, color: '#fff' }}>
+                <Text style={{  color: '#fff' }}>
                   Exclude songs less than{' '}
                 </Text>
                 <TextInput
@@ -120,7 +121,7 @@ const Scan = () => {
                   defaultValue={text2}
                   style={styles.textfield}
                 />
-                <Text style={{ fontSize: 18, color: '#fff' }}>seconds</Text>
+                <Text style={{  color: '#fff' }}>seconds</Text>
               </View>
             </View>
           </TouchableOpacity>
@@ -135,7 +136,7 @@ const Scan = () => {
                 checkedColor={Colors.secondary}
                 style={{ alignSelf: 'flex-start' }}
               />
-              <Text style={{ fontSize: 18, color: '#fff' }}>
+              <Text style={{ color: '#fff' }}>
                 Exclude ringtone
               </Text>
             </View>
@@ -143,9 +144,10 @@ const Scan = () => {
         </View>
         <TouchableOpacity>
           <View style={styles.button}>
-            <Text style={{ color: '#fff', fontSize: 18 }}>Start Scan</Text>
+            <Text style={{ color: '#fff', }}>Start Scan</Text>
           </View>
         </TouchableOpacity>
+       </View>
       </ScrollView>
 
       {/* SideBar */}
@@ -167,11 +169,11 @@ const Scan = () => {
               <TouchableOpacity onPress={() => setRightModalVisible(false)}>
                 <MaterialIcons
                   name="arrow-back"
-                  size={25}
+                  size={20}
                   color={'#fff'} />
               </TouchableOpacity>
               <View style={styles.headerTitle}>
-                <Text style={{ color: '#fff', fontSize: 25 }}>Scan specified folder</Text>
+                <Text style={{ color: '#fff', fontSize: 20 }}>Scan specified folder</Text>
               </View>
             </View>
             <SideBar />
@@ -230,12 +232,11 @@ const styles = StyleSheet.create({
   },
   checkBox: {
     width: '100%',
-    // backgroundColor: 'grey',
     marginTop: 10,
   },
   textfield: {
     height: 30,
-    width: '10%',
+    width: '12%',
     borderBottomWidth: 1,
     borderBottomColor: '#fff',
     paddingVertical: 5,

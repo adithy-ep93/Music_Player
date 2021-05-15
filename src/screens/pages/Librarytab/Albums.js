@@ -10,19 +10,19 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import ContactTile from '../../../components/contactTile';
 import Divider from '../../../components/divider'
 import UserData from '../data';
-import { color } from 'react-native-reanimated';
+import Colors from '../../../config/colors';
 
 const Artists = () => {
 
  const navigation = useNavigation();
   
   return (
-    <View style={{backgroundColor:'#87CEFA'}}>
+    <View style={{backgroundColor:Colors.primary}}>
         
      <View>
        {/* body */}
            {/* 1st row */}
-        <Pressable style={{ backgroundColor: '#87CEFA', }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }} onPress={() => navigation.navigate('DownloadAlbum')}   >
+        <Pressable style={{ backgroundColor: Colors.primary, }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }} onPress={() => navigation.navigate('DownloadAlbum')}   >
             <View style={{ width: '100%', height: 70, flexDirection: 'row' }}>
                 <View style={styles.squre}>
                     <MaterialIcons name="album" size={35} color="#fff"/>
@@ -45,7 +45,7 @@ const Artists = () => {
         </Pressable>
 
           {/* 2 nd row */}
-          <Pressable style={{ backgroundColor: '#87CEFA', }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }} onPress={() => navigation.navigate('SoundAlbum')}   >
+          <Pressable style={{ backgroundColor: Colors.primary, }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }} onPress={() => navigation.navigate('SoundAlbum')}   >
             <View style={{ width: '100%', height: 70, flexDirection: 'row' }}>
                 <View style={styles.squre}>
                 <MaterialIcons name="album" size={35} color="#fff"/>
@@ -67,7 +67,7 @@ const Artists = () => {
             <Divider/>
         </Pressable>
          {/* 3 3d row */}
-         <Pressable style={{ backgroundColor: '#87CEFA', }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }}   onPress={() => navigation.navigate('WhatsappAlbum')}  >
+         <Pressable style={{ backgroundColor: Colors.primary }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }}   onPress={() => navigation.navigate('WhatsappAlbum')}  >
             <View style={{ width: '100%', height: 70, flexDirection: 'row' }}>
                 <View style={styles.squre}>
                 <MaterialIcons name="album" size={35} color="#fff"/>
@@ -97,7 +97,7 @@ const Artists = () => {
             <TouchableOpacity  activeOpacity={0.8} style={styles.newIconContainer}>
               <Image
                 style={styles.circle}
-                source={require('../../../assests/music/shuffle.jpg')}/>
+                source={require('../../../assets/music/shuffle.jpg')}/>
             </TouchableOpacity></View>
        
     </View>
@@ -111,7 +111,7 @@ export default Artists;
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor:'#87CEFA',
+        backgroundColor:Colors.primary,
         flex:1,
         flexDirection:'column'
     },

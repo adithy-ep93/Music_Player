@@ -40,7 +40,7 @@ const RecentAdd = () => {
   return (
     <View style={styles.container}>
       
-     <View style={{height:'100%',backgroundColor:'#4169E1'}}>
+     <View style={{height:'100%',backgroundColor:Colors.primary}}>
 
             {/*Header */}
         <View style={styles.headerContainer}>
@@ -48,12 +48,12 @@ const RecentAdd = () => {
               <MaterialIcons name="arrow-back" size={20} color="#fff"/></TouchableWithoutFeedback>
             <View style={styles.innerContainer}>
                 <View style={styles.nameContainer}>
-                  <Text style={styles.headerHeading}>RECENT ADD</Text></View>
+                  <Text style={styles.headerHeading}>Recent Add</Text></View>
             </View>
-            <TouchableWithoutFeedback>
+            <TouchableWithoutFeedback onPress={()=> navigation.navigate("Aads")}>
                 <MaterialIcons name="card-giftcard" size={20} color="#fff"/>
             </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback>
+            <TouchableWithoutFeedback onPress={()=> navigation.navigate("Searchlibrary")}>
                 <FontAwesome name="search" size={20} color="#fff"/>
             </TouchableWithoutFeedback>
             <TouchableWithoutFeedback 
@@ -95,22 +95,23 @@ const RecentAdd = () => {
                 {optionButtonState ? <View>
                     <OptionCard
                         data={options}
-                        selectedItem={(item) => {
-                            console.log(item)
-                            switch (item) {
-                                case 'Edit':
-                                    navigation.navigate('People');
-                                    setOptionButtonState(false);
-                                    break;
-                                case 'Shuffle':
-                                    navigation.navigate('Options');
-                                    setOptionButtonState(false);
-                                    break;
-                                case 'Sort by':
-                                   setSortModal(true);
-                                    break;
-                            }
-                        }}
+                      //   selectedItem={(item) => {
+                      //       console.log(item)
+                      //       switch (item) {
+                      //           case 'Edit':
+                      //               navigation.navigate(null);
+                      //               setOptionButtonState(false);
+                      //               break;
+                      //           case 'Shuffle':
+                      //               navigation.navigate(null);
+                      //               setOptionButtonState(false);
+                      //               break;
+                      //           case 'Sort by':
+                      //              setSortModal(true);
+                      //               break;
+                      //       }
+                      //   }
+                      // }
                     />
                 </View> : <View></View>}
                
@@ -155,7 +156,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     height: 55,
-    backgroundColor:'#4169E1',
+    backgroundColor:Colors.primary,
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingBottom: 5,
@@ -164,7 +165,7 @@ const styles = StyleSheet.create({
   headerHeading: {
           fontSize: 20,
           color: '#fff',
-          fontWeight: 'bold',
+          
       },
   nameContainer: {
         marginLeft: 16,
@@ -182,7 +183,7 @@ const styles = StyleSheet.create({
         color:'#fff'
       },
    list:{
-        backgroundColor:'#87CEFA'
+        backgroundColor:Colors.primary
       },
    newIconContainer: {
         position: 'absolute',

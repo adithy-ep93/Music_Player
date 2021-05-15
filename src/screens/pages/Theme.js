@@ -8,6 +8,7 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { ScrollView } from 'react-native-gesture-handler';
 import FileViewer from 'react-native-file-viewer';
+import Colors from '../../config/colors';
 // Import DocumentPicker to pick file to view
 import DocumentPicker from 'react-native-document-picker';
 
@@ -60,10 +61,10 @@ const Theme = () => {
 
   
   return (
-    <View style={{flex:1,flexDirection:'column',backgroundColor:'#87CEFA',flex:1,flexDirection:'column'}}>
+    <View style={{flex:1,flexDirection:'column',backgroundColor:Colors.primary,flex:1,flexDirection:'column'}}>
          <ScrollView>
             
-            <View style={{backgroundColor:'#4169E1'}}>
+            <View style={{backgroundColor:Colors.primary}}>
               <View style={styles.headerContainer}>
                 <TouchableOpacity onPress={()=> navigation.goBack(null)}>
                 <MaterialIcons name="arrow-back" size={20} color="#fff"/></TouchableOpacity>
@@ -221,7 +222,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     height: 55,
-    backgroundColor:'#4169E1',
+    backgroundColor:Colors.primary,
     alignItems: 'center',
     paddingBottom: 5,
     paddingLeft: 15,

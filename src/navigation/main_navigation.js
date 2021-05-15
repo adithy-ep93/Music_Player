@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import HomeStackNavigation from '../navigation/homestack';
 import Scan from '../screens/Scan/scan_library';
 import HomePage from '../screens/Home/home_page';
-import Settings from '../screens/Settings/settings';
+import Settings from '../screens/pages/Settings';
 import Equalizer from '../screens/Equalizer/equalizer';
 import DriveMode from '../screens/DriveMode';
 import Widget from '../screens/Widget/Widget';

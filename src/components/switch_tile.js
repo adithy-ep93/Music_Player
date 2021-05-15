@@ -14,7 +14,7 @@ const SwitchTile = ({text, subText,third,forth,onPress}) =>{
   return (
    <TouchableOpacity  onPress={()=> onSwitch()}>
 
-      <View style={{backgroundColor:'#4682B4', width:'100%'}}>
+      <View style={{backgroundColor:Colors.primary, width:'100%'}}>
           <View style={style.switch}>
               <View style={{marginTop:20}}>
                   <Text style={style.text}>{text}</Text>
@@ -25,7 +25,7 @@ const SwitchTile = ({text, subText,third,forth,onPress}) =>{
               <View style={{height:20}}>
                   <Switch
                       trackColor={{false: '#bdbdbd', true: '#e8eae6'}}
-                      thumbColor={isEnabled ? Colors.primary : '#ececec'}
+                      thumbColor={isEnabled ? 'yellow' : '#ececec'}
                       onValueChange={toggleSwitch}
                       value={isEnabled}
                       style={{marginRight:20}}
@@ -51,7 +51,7 @@ const style = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     height: 48,
-    backgroundColor: '#4682B4',
+    backgroundColor: Colors.primary,
     paddingLeft: 5,
     marginBottom:20,
    

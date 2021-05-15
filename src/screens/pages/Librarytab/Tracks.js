@@ -9,7 +9,7 @@ import Entypo from 'react-native-vector-icons/Entypo';
 
 import ContactTile from '../../../components/contactTile';
 import UserData from '../data';
-import { color } from 'react-native-reanimated';
+
 const USERS = new UserData();
 const Frequent_Users = USERS.FrequentUsers;
 const Tracks = () => {
@@ -44,7 +44,7 @@ const Tracks = () => {
             <TouchableOpacity  activeOpacity={0.8} style={styles.newIconContainer}>
               <Image
                 style={styles.circle}
-                source={require('../../../assests/music/shuffle.jpg')}/>
+                source={require('../../../assets/music/shuffle.jpg')}/>
             </TouchableOpacity></View>
        
 

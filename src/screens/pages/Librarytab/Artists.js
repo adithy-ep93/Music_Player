@@ -12,7 +12,6 @@ import Colors from '../../../config/colors';
 import ContactTile from '../../../components/contactTile';
 import Divider from '../../../components/divider'
 import UserData from '../data';
-import { color } from 'react-native-reanimated';
 
 const Artists = () => {
   
@@ -21,10 +20,10 @@ const Artists = () => {
   return (
     <View>
         <ScrollView>
-     <View style={{backgroundColor:'#87CEFA'}}>
+     <View style={{backgroundColor:Colors.primary}}>
        {/* body */}
            {/* 1st row */}
-        <Pressable style={{ backgroundColor: '#87CEFA', }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }}   onPress={() => navigation.navigate('Unknown')}  >
+        <Pressable style={{ backgroundColor:Colors.primary, }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }}   onPress={() => navigation.navigate('Unknown')}  >
             <View style={{ width: '100%', height: 70, flexDirection: 'row' }}>
                 <View style={styles.squre}>
                     <Octicons name="person" size={35} color="#fff"/>
@@ -47,7 +46,7 @@ const Artists = () => {
         </Pressable>
 
           {/* 2 nd row */}
-          <Pressable style={{ backgroundColor: '#87CEFA', }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }} onPress={() => navigation.navigate('Secondpage')}   >
+          <Pressable style={{ backgroundColor: Colors.primary, }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }} onPress={() => navigation.navigate('Secondpage')}   >
             <View style={{ width: '100%', height: 70, flexDirection: 'row' }}>
                 <View style={styles.squre}>
                 <Octicons name="person" size={35} color="#fff"/>
@@ -77,7 +76,7 @@ const Artists = () => {
             <TouchableOpacity  activeOpacity={0.8} style={styles.newIconContainer}>
               <Image
                 style={styles.circle}
-                source={require('../../../assests/music/shuffle.jpg')}/>
+                source={require('../../../assets/music/shuffle.jpg')}/>
             </TouchableOpacity></View>
        
     </View>
@@ -97,7 +96,7 @@ export default Artists;
 
 const styles = StyleSheet.create({
   container:{
-    backgroundColor:'#87CEFA',
+    backgroundColor:Colors.primary,
     flex:1,
     flexDirection:'column'
 },

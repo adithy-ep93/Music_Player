@@ -17,6 +17,7 @@ import Modal from 'react-native-modal';
 
 
 
+
 const StatusBarHeight = StatusBar.currentHeight;
 const USERS = new UserData();
 const WhatsApp_item = USERS.WhatsApp;
@@ -42,12 +43,11 @@ const Alwhatsapp = ({navigation}) =>{
     />
     );
 return(
- <View style={{flex:1, alignItems:'center',paddingTop: StatusBarHeight, backgroundColor:'#87CEFA'}}>
+ <View style={{flex:1, alignItems:'center',backgroundColor:'#87CEFA'}}>
           <ScrollView>
-            <StatusBar backgroundColor="rgba(0,0,0,0.2)" translucent={true} />
             
        <View style={{opacity:0.8}}>
-            <ImageBackground style={{ height: imageHeight, width: imageWidth }} source={require('../../../../assests/music/album1.png')}>
+            <ImageBackground style={{ height: imageHeight, width: imageWidth }} source={require('../../../../assets/contact_images/person1.png')}>
                
                <TouchableOpacity  onPress={()=> navigation.goBack(null)}>
                     <MaterialIcons name="arrow-back" size={25} color="#fff" style={{marginLeft:16,padding:10}}/>
@@ -73,7 +73,7 @@ return(
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={renderItem}
                     showsVerticalScrollIndicator={false}
-                    style={styles.list}
+                    style={style.list}
                   />
                  
 
@@ -82,7 +82,7 @@ return(
 
 
                         {/* Optional card */}
-                        <View style={styles.optionCardContainer}>
+                        <View style={style.optionCardContainer}>
                         
                             
                         {optionButtonState ? <View>
@@ -92,11 +92,11 @@ return(
                                     console.log(item)
                                     switch (item) {
                                         case 'Edit':
-                                            navigation.navigate('People');
+                                           
                                             setOptionButtonState(false);
                                             break;
                                         case 'Shuffle':
-                                            navigation.navigate('Options');
+                                            
                                             setOptionButtonState(false);
                                             break;
                                         case 'Sort by':
@@ -118,7 +118,7 @@ return(
                         style={{ margin: 1 }}
                         backdropOpacity={0}
                         onBackdropPress={() => setSortModal(false)}>
-                        <View style={styles.optionModal}>
+                        <View style={style.optionModal}>
                         <OptionCard
                         data={Sortby}
                         selectedItem={(item) => console.log(item)}

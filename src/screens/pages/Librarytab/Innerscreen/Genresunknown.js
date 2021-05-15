@@ -13,6 +13,8 @@ import ContactTile from '../../../../components/contactTile';
 import UserData from '../../data';
 import OptionCard from '../../../../components/option_card';
 import Modal from 'react-native-modal';
+import Colors from '../../../../config/colors';
+
 
 
 
@@ -42,12 +44,11 @@ const Alsound = ({navigation}) =>{
     />
     );
 return(
- <View style={{flex:1, alignItems:'center',paddingTop: StatusBarHeight, backgroundColor:'#87CEFA'}}>
+ <View style={{flex:1, alignItems:'center',backgroundColor:Colors.primary}}>
           <ScrollView>
-            <StatusBar backgroundColor="rgba(0,0,0,0.2)" translucent={true} />
-            
+           
        <View style={{opacity:0.8}}>
-            <ImageBackground style={{ height: imageHeight, width: imageWidth,backgroundColor:'gray' }} source={require('../../../../assests/music/headphone.png')}>
+            <ImageBackground style={{ height: imageHeight, width: imageWidth,backgroundColor:'gray' }} source={require('../../../../assets/contact_images/person1.png')}>
                
                <TouchableOpacity  onPress={()=> navigation.goBack(null)}>
                     <MaterialIcons name="arrow-back" size={25} color="#fff" style={{marginLeft:16,padding:10}}/>
@@ -81,7 +82,7 @@ return(
 
 
                         {/* Optional card */}
-                        <View style={styles.optionCardContainer}>
+                        <View style={style.optionCardContainer}>
                         
                             
                         {optionButtonState ? <View>
@@ -117,7 +118,7 @@ return(
                         style={{ margin: 1 }}
                         backdropOpacity={0}
                         onBackdropPress={() => setSortModal(false)}>
-                        <View style={styles.optionModal}>
+                        <View style={style.optionModal}>
                         <OptionCard
                         data={Sortby}
                         selectedItem={(item) => console.log(item)}
@@ -149,7 +150,7 @@ const style= StyleSheet.create({
         flexDirection: 'row',
         width: '100%',
         height: 55,
-        backgroundColor:'#4169E1',
+        backgroundColor:Colors.primary,
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingBottom: 5,

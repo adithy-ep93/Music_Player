@@ -66,8 +66,8 @@ const SideBar = () => {
                                             color={'#fff'} />
                                     </View>
                                     <View style={styles.folderData}>
-                                        <Text style={{ fontSize: 18, color: '#fff' }}>0000-79A7</Text>
-                                        <Text style={{ fontSize: 14, color: '#fff' }}>17 songs</Text>
+                                        <Text style={{ color: '#fff' }}>0000-79A7</Text>
+                                        <Text style={{  color: '#fff' }}>17 songs</Text>
 
                                     </View>
                                 </View>
@@ -75,7 +75,7 @@ const SideBar = () => {
                         </TouchableOpacity>
                     </View>
                     <Divider style={{ marginHorizontal: 20, marginVertical: 5 }} />
-                     <View style={{width: '100%', position:'absolute', bottom:50, }}>
+                     <View style={{width: '100%', position:'absolute', bottom:50, paddingBottom:10}}>
                      <TouchableOpacity style={{ alignItems: 'center', justifyContent: 'center', width: '100%' }}>
                             <View style={styles.button}>
                                 <Text style={{ color: '#fff', fontSize: 18 }}>Start Scan</Text>

@@ -158,13 +158,13 @@ const PlayList = () => {
                 onBackButtonPress={() => setBottomModalVisible(false)}
             >
                 <View style={styles.bottomModal}>
-                    <Text style={{ color: '#fff', fontSize: 20, marginTop: 20 }}>Default list</Text>
-                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                    <Text style={{ color: '#fff', fontSize: 20, padding:15 }}>Default list</Text>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' ,height:160}}>
                         <View style={styles.icons}>
                             <View style={{ alignItems: 'center', justifyContent: 'center' }}><TouchableOpacity>
                                 <AntDesign
                                     name="playcircleo"
-                                    size={30}
+                                    size={25}
                                     color={'#fff'}
                                     style={{ alignSelf: 'center' }}
                                 />
@@ -174,7 +174,7 @@ const PlayList = () => {
                                 <TouchableOpacity onPress={() => Art()}>
                                     <Ionicons
                                         name="image-outline"
-                                        size={30}
+                                        size={25}
                                         color={'#fff'}
                                         style={{ alignSelf: 'center' }}
                                     />
@@ -192,7 +192,7 @@ const PlayList = () => {
                                 }}>
                                     <MaterialIcons
                                         name="playlist-add"
-                                        size={35}
+                                        size={25}
                                         color={'#fff'}
                                         style={{ alignSelf: 'center' }}
                                     />
@@ -203,7 +203,7 @@ const PlayList = () => {
                                 <TouchableOpacity onPress={onShare}>
                                     <EvilIcons
                                         name="share-google"
-                                        size={30}
+                                        size={25}
                                         color={'#fff'}
                                         style={{ alignSelf: 'center' }}
                                     />
@@ -216,7 +216,7 @@ const PlayList = () => {
                                 <TouchableOpacity onPress={() => setEditModalVisible(true)}>
                                     <Feather
                                         name="edit"
-                                        size={30}
+                                        size={25}
                                         color={'#fff'}
                                         style={{ alignSelf: 'center' }}
                                     />
@@ -228,7 +228,7 @@ const PlayList = () => {
                                 <TouchableOpacity onPress={()=> setDeleteModalVisible(true)}>
                                     <MaterialCommunityIcons
                                         name="delete"
-                                        size={30}
+                                        size={25}
                                         color={'#fff'}
                                         style={{ alignSelf: 'center' }}
                                     />
@@ -266,9 +266,9 @@ const PlayList = () => {
                             marginRight: 20,
                         }}>
                         <TouchableOpacity onPress={() => setEditModalVisible(false)}>
-                            <Text style={{ fontSize: 18 }}>CANCEL</Text>
+                            <Text >CANCEL</Text>
                         </TouchableOpacity>
-                        <Text style={{ fontSize: 18 }}>OK</Text>
+                        <Text >OK</Text>
                     </View>
                 </View>
             </Modal>
@@ -321,9 +321,9 @@ const PlayList = () => {
                             marginRight: 20,
                         }}>
                         <TouchableOpacity onPress={() => setDeleteModalVisible(false)}>
-                            <Text style={{ fontSize: 18,color:'blue' ,padding:5}}>CANCEL</Text>
+                            <Text style={{ color:'blue' ,padding:5}}>CANCEL</Text>
                         </TouchableOpacity>
-                        <Text style={{ fontSize: 18, color:'blue',padding:5 }}>DELETE</Text>
+                        <Text style={{  color:'blue',padding:5 }}>DELETE</Text>
                     </View>
                     <TouchableOpacity>
                         <View style={{height:40,width:100,borderRadius:5,borderWidth:1,borderColor:'#fff',alignItems:'center',justifyContent:'center'}}>
@@ -430,13 +430,13 @@ const styles = StyleSheet.create({
         paddingTop: 15
     },
     icons: {
-        height: '84%',
         width: '35%',
+        height:'70%',
         // backgroundColor: Colors.shade,
         alignItems: 'center',
         justifyContent: 'space-between',
         alignContent: 'center',
-        padding: 15
+       
     },
     optionmodal: {
         width: '20%',
@@ -449,12 +449,12 @@ const styles = StyleSheet.create({
 
     },
     add: {
-        width: 60,
-        height: 60,
-        borderRadius: 60 / 2,
+        width: 50,
+        height: 50,
+        borderRadius: 50 / 2,
         backgroundColor: 'orange',
         position: 'absolute',
-        bottom: 130,
+        bottom: 150,
         right: 20,
         alignItems: 'center',
         justifyContent: 'center',
@@ -465,8 +465,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignSelf: 'center',
         padding: 20,
-        height: '30%',
-        paddingBottom: 20
+       
     },
     textfield: {
 
@@ -491,17 +490,17 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffff',
         alignSelf: 'center',
         padding: 20,
-        paddingBottom: 20
+        paddingBottom: 10
     },
-    addModal: {
-        width: '80%',
-        borderRadius: 5,
-        backgroundColor: '#fff',
-        alignSelf: 'center',
-        padding: 20,
-        height: '30%',
-        paddingBottom: 20
-    },
+    // addModal: {
+    //     width: '80%',
+    //     borderRadius: 5,
+    //     backgroundColor: '#fff',
+    //     alignSelf: 'center',
+    //     padding: 20,
+    //     height: '30%',
+    //     paddingBottom: 20
+    // },
     textfield: {
 
         height: 40,

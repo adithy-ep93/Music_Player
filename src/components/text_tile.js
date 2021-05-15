@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import Colors from '../config/colors';
 
 const TextTile = ({headText, subText, onpress}) => {
   return (
@@ -28,9 +29,8 @@ const style = StyleSheet.create({
   section: {
     width: '100%',
     height: 40,
-    backgroundColor: '#4682B4',
+    backgroundColor: Colors.primary,
     paddingLeft: 5,
-    marginTop:5,
-    marginBottom:15
+   
   },
 });

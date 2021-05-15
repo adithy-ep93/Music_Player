@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { StyleSheet, Text, TextInput,View, Image, Pressable,TouchableOpacity,ScrollView} from 'react-native';
+import { StyleSheet, Text, TextInput,View, Image, Pressable,TouchableOpacity,ScrollView, Share, PermissionsAndroid} from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import Entypo from 'react-native-vector-icons/Entypo';
 import DividerTile from './divider';
@@ -19,12 +19,14 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer} from '@react-navigation/native';
 import RoundCheckbox from 'rn-round-checkbox';
 import Colors from '../config/colors';
+import {useNavigation} from '@react-navigation/native';
 //import Stacknavigation from '../navigation/Stacknavigation';
 
 
 const Stack = createStackNavigator();
 
-const ContactTile = ({ data, id,name, subname,size,time,album,artist,genre, rightname, onPress,navigation}) => {
+const ContactTile = ({ data, id,name, subname,size,time,album,artist,genre, rightname, onPress}) => {
+    const navigation = useNavigation();
     const [customModalVisible, setcustomModalVisible] = useState(false);
     const [editModalVisible, seteditModalVisible] = useState(false);
     const [artworkModalVisible, setartworkModalVisible] = useState(false);
@@ -39,6 +41,90 @@ const ContactTile = ({ data, id,name, subname,size,time,album,artist,genre, righ
     const [isSelected, setSelection] = useState(false);
     const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
     const toggleSwitchOn = () => setIsEnabled((previousState) => previousState);
+    const [filePath, setFilePath] = useState({});
+
+     //share option
+     const onShare = async () => {
+        try {
+          const result = await Share.share({
+            message:
+              'React Native | A framework for building native apps using React',
+          });
+          if (result.action === Share.sharedAction) {
+            if (result.activityType) {
+              // shared with activity type of result.activityType
+            } else {
+              // shared
+            }
+          } else if (result.action === Share.dismissedAction) {
+            // dismissed
+          }
+        } catch (error) {
+          alert(error.message);
+        }
+      };
+
+    //art modal
+    function Art() {
+        setartworkModalVisible(true);
+        setcustomModalVisible(false);
+    }
+
+    //imagepicker
+    const requestExternalWritePermission = async () => {
+        if (Platform.OS === 'android') {
+            try {
+                const granted = await PermissionsAndroid.request(
+                    PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+                    {
+                        title: 'External Storage Write Permission',
+                        message: 'App needs write permission',
+                    },
+                );
+                // If WRITE_EXTERNAL_STORAGE Permission is granted
+                return granted === PermissionsAndroid.RESULTS.GRANTED;
+            } catch (err) {
+                console.warn(err);
+                alert('Write permission err', err);
+            }
+            return false;
+        } else return true;
+    };
+
+    const chooseFile = async (type) => {
+        let options = {
+            mediaType: type,
+            maxWidth: 300,
+            maxHeight: 550,
+            quality: 1,
+        };
+        let isStoragePermitted = await requestExternalWritePermission();
+        if (isStoragePermitted) {
+            launchImageLibrary(options, (response) => {
+                console.log('Response = ', response);
+                if (response.errorCode == 'camera_unavailable') {
+                    alert('Camera not available on device');
+                    return;
+                } else if (response.errorCode == 'permission') {
+                    alert('Permission not satisfied');
+                    return;
+                } else if (response.errorCode == 'others') {
+                    alert(response.errorMessage);
+                    return;
+                }
+                console.log('base64 -> ', response.base64);
+                console.log('uri -> ', response.uri);
+                console.log('width -> ', response.width);
+                console.log('height -> ', response.height);
+                console.log('fileSize -> ', response.fileSize);
+                console.log('type -> ', response.type);
+                console.log('fileName -> ', response.fileName);
+                setFilePath(response);
+            });
+        }
+    };
+
+
     function onSwitch  (){
         data2 (false);
        
@@ -106,7 +192,7 @@ const ContactTile = ({ data, id,name, subname,size,time,album,artist,genre, righ
     };
    
     return (
-    <Pressable style={{ backgroundColor: 'steelblue', }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }} onPress={onPress}>
+    <Pressable style={{ backgroundColor: Colors.primary, }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }} onPress={onPress}>
         <View style={{ width: '100%', height: 70, flexDirection: 'row' }}>
             <View style={styles.circle}>
                 {data ? <Image style={styles.imageicon} source={data} /> : <Text style={styles.nameLetter}>{name[0]}</Text>}
@@ -263,12 +349,12 @@ const ContactTile = ({ data, id,name, subname,size,time,album,artist,genre, righ
                                         <Text style={{fontSize:18,color: 'white',}}>Reset</Text>
                                     </View>
                                     <View style={{flex:1}}>
-                                        <TouchableOpacity onPress={() => navigation.navigate('Pickfromnet')}>
+                                        <TouchableOpacity onPress={() => null}>
                                             <Text style={{fontSize:18,color: 'white',}}>Pick from Internet</Text>
                                         </TouchableOpacity>
                                     </View>
                                     <View style={{flex:1,flexDirection:"row"}}>
-                                        <TouchableOpacity onPress={() =>pickgallery()}>
+                                        <TouchableOpacity onPress={() =>chooseFile('photo')}>
                                             <Text style={{fontSize:17,color: 'white',}}>Pick from gallery</Text>
                                         </TouchableOpacity>
 
@@ -331,7 +417,7 @@ const ContactTile = ({ data, id,name, subname,size,time,album,artist,genre, righ
 
                         {/* Share parts starts here */}
                         <View style={{paddingRight:10,paddingLeft:20}}>
-                            <TouchableOpacity onPress={() =>share()}>
+                            <TouchableOpacity onPress={onShare}>
                                 <EvilIcons name='share-google' size={38} style={{color:"white",paddingLeft:12,paddingRight:10}}/>
                                 <Text style={{color:"white",fontSize:16,paddingTop:10}}>  Share</Text>   
                             </TouchableOpacity>
@@ -496,7 +582,7 @@ const styles = StyleSheet.create({
     },
     bottomModal: {
         width: '100%',
-        backgroundColor: 'slategray',
+        backgroundColor: Colors.primary,
         height: '40%',
         position: 'absolute',
         bottom: 0,
@@ -520,7 +606,7 @@ const styles = StyleSheet.create({
 
     artworkModal: {
         width: '100%',
-        backgroundColor: 'slategray',
+        backgroundColor: Colors.primary,
         height: '35%',
         position: 'absolute',
         bottom: 0,

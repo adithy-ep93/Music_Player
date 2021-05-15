@@ -10,6 +10,7 @@ import Colors from '../config/colors';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Divider } from 'react-native-elements';
+import {useNavigation} from '@react-navigation/native';
 
 const DATA = require('../components/data.json');
 
@@ -194,7 +195,7 @@ const Music = () => {
         } catch (_) { }
     }
 
-
+    const navigation = useNavigation();
     return (
         <View>
             <View style={styles.bottombar}>
@@ -210,6 +211,7 @@ const Music = () => {
                     onSlidingStart={slidingStarted}
                     onSlidingComplete={slidingCompleted}
                 />
+                <TouchableOpacity onPress={()=> navigation.navigate("MusicPage")}>
                 <View style={styles.musicTile}>
                     <View style={{ width: '50%', alignItems: 'center', flexDirection: 'row' }}>
                         <View style={styles.image}>
@@ -217,12 +219,12 @@ const Music = () => {
                                 uri: songDetails.artwork,
                             }} /> : <Entypo
                                     name="beamed-note"
-                                    size={25}
+                                    size={20}
                                     color={Colors.primary} />}
 
                         </View>
                         <View>
-                            <Text style={{ color: '#fff', fontSize: 18 }}>{songDetails.title}</Text>
+                            <Text style={{ color: '#fff' }}>{songDetails.title}</Text>
                             <Text style={{ color: '#fff' }}>Change song by swipe</Text>
                         </View>
                     </View>
@@ -257,6 +259,7 @@ const Music = () => {
                         </TouchableOpacity>
                     </View>
                 </View>
+                </TouchableOpacity>
             </View>
 
             {/* bottomModal */}
@@ -440,7 +443,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingHorizontal: 20
+        padding:5
 
     },
     image: {
@@ -458,14 +461,15 @@ const styles = StyleSheet.create({
         borderRadius: 50 / 2,
     },
     buttons: {
-        width: '40%',
+        width: '55%',
         alignItems: 'center',
-        justifyContent: 'space-between',
-        flexDirection: 'row'
+        justifyContent: 'space-evenly',
+        flexDirection: 'row',
+        padding:10
     },
     bottombar: {
         width: '100%',
-        height: 70,
+        height: 85,
         position: 'absolute',
         bottom: 0,
         backgroundColor: Colors.primary,

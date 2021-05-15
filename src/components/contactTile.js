@@ -3,9 +3,11 @@ import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Divider from '../components/divider';
 
+import Colors from '../config/colors';
+
 const ContactTile = ({ data, name, subname, song, onPress }) => {
     return (
-        <Pressable style={{ backgroundColor: '#87CEFA', }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }} onPress={onPress}>
+        <Pressable style={{ backgroundColor: Colors.primary, }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }} onPress={onPress}>
             <View style={{ width: '100%', height: 70, flexDirection: 'row' }}>
                 <View style={styles.circle}>
                     {data ? <Image style={styles.imageicon} source={data} /> : <Text style={styles.nameLetter}>{name[0]}</Text>}

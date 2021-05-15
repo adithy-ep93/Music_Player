@@ -8,12 +8,14 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ripple from 'react-native-material-ripple';
 import { Card, ListItem, Button, Icon } from 'react-native-elements'
-import styles from '../../../../config/styles';
 
 import ContactTile from '../../../../components/contactTile';
 import UserData from '../../data';
 import OptionCard from '../../../../components/option_card';
 import Modal from 'react-native-modal';
+import Colors from '../../../../config/colors';
+
+
 
 
 
@@ -43,12 +45,12 @@ const Unknown = ({navigation}) =>{
     />
     );
 return(
- <View style={{flex:1, alignItems:'center',paddingTop: StatusBarHeight, backgroundColor:'#87CEFA'}}>
+ <View style={{flex:1, alignItems:'center', backgroundColor:Colors.primary}}>
           <ScrollView>
-            <StatusBar backgroundColor="rgba(0,0,0,0.2)" translucent={true} />
+            
             
        <View style={{opacity:0.8}}>
-            <ImageBackground style={{ height: imageHeight, width: imageWidth }} source={require('../../../../assests/music/person.png')}>
+            <ImageBackground style={{ height: imageHeight, width: imageWidth }} source={require('../../../../assets/contact_images/person1.png')}>
                
                <TouchableOpacity  onPress={()=> navigation.goBack(null)}>
                     <MaterialIcons name="arrow-back" size={25} color="#fff" style={{marginLeft:16,padding:10}}/>
@@ -61,7 +63,7 @@ return(
                         <Entypo name="dots-three-vertical" size={25} color="#fff"/>
                         </TouchableOpacity> 
                             </View>
-                <Text style={style.head}>BHADRA BOYS</Text>
+                <Text style={styles.head}>BHADRA BOYS</Text>
               </ImageBackground>
      </View>
 
@@ -75,12 +77,12 @@ return(
   <View>
 
   <ScrollView horizontal={true}>
-           <TouchableOpacity  style={{padding:10,backgroundColor:'#DCDCDC',opacity:0.7}}
+           <TouchableOpacity  style={{padding:10,backgroundColor:Colors.primary,opacity:0.7}}
                 //   onPress={()=>{navigation.navigate("Postpage")}} 
                   >
                     <ImageBackground 
                     style={{width:100,height:100,borderRadius:20}}
-                     source={require("../../../../assests/music/album1.png")}>
+                     source={require("../../../../assets/contact_images/person1.png")}>
                        <View style={{marginVertical:61,backgroundColor:'#87CEFA',opacity:0.7,}}>
                                 <Text>music</Text>
                                 <Text>1 songs</Text>
@@ -174,7 +176,7 @@ return(
 
 export default Unknown;
 
-const style= StyleSheet.create({
+const styles= StyleSheet.create({
     headerContainer: {
         flexDirection: 'row',
         width: '100%',

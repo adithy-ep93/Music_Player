@@ -8,6 +8,8 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 
+import Colors from '../config/colors';
+
 
 const Defaultlist = () => {
   const navigation = useNavigation();
@@ -16,12 +18,10 @@ const Defaultlist = () => {
     /* Main View starts here */
 
     <View>
-      <StatusBar backgroundColor="slategray" translucent={true} />
-
-        {/* View for header starts here */}
+      {/* View for header starts here */}
 
           <View>
-            <View style={{height:80,backgroundColor:"slategray",paddingHorizontal:5,flexDirection:"row",paddingTop:15,alignItems:"center"}}>
+            <View style={{height:55 ,backgroundColor:Colors.primary,paddingHorizontal:5,flexDirection:"row",paddingTop:15,alignItems:"center"}}>
               <TouchableOpacity onPress={()=> navigation.goBack(null)}>
                 <Feather name="arrow-left" style={{color:"white",paddingLeft:10}} size={30} color="#fff" />
               </TouchableOpacity>

@@ -8,11 +8,15 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import Modal from 'react-native-modal';
+import {useNavigation} from '@react-navigation/native';
+
+import Colors from '../../config/colors';
 
 const Defaultlist = () => {
   const [rightModalVisible, setrightModalVisible] = useState(false);
   const [sortbyModalVisible, setsortbyModalVisible] = useState(false);
-
+  const navigation = useNavigation();
+ 
   function right(){
     setrightModalVisible(false);
     setrightModalVisible(true);
@@ -26,19 +30,17 @@ const Defaultlist = () => {
 
     /* Main View starts here */
     <View>
-      <StatusBar backgroundColor="slategray" translucent={true} />
-
-        {/* View for header starts here */}
+      {/* View for header starts here */}
         <View>
-            <View style={{height:80,backgroundColor:"slategray",paddingHorizontal:5,flexDirection:"row",paddingTop:15,alignItems:"center"}}>
-              <TouchableOpacity>
+            <View style={{height:55,backgroundColor:Colors.primary,paddingHorizontal:5,flexDirection:"row",alignItems:"center",justifyContent:'center',elevation:5}}>
+              <TouchableOpacity onPress={()=> navigation.goBack(null)}>
                 <Feather name="arrow-left" style={{color:"white",paddingLeft:10}} size={30} color="#fff" />
               </TouchableOpacity>
                 <Text style={{ fontSize: 20,fontWeight:"bold",alignContent:"center",paddingLeft:40,color:"white"}} >Default list</Text>  
-              <TouchableOpacity>
+              <TouchableOpacity onPress={()=> navigation.navigate("Aads")}>
                 <Octicons name="gift" style={{color:"white",paddingLeft:50}} size={25} color="#fff" />
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={()=> navigation.navigate("Searchlibrary")}>
                 <EvilIcons name="search" style={{color:"white",paddingLeft:20}} size={30} color="#fff" />
               </TouchableOpacity>
               <TouchableOpacity>
@@ -76,8 +78,10 @@ const Defaultlist = () => {
               </View>
               <View style={{flex:1}}>
                 <TouchableOpacity  onPress={() =>sortby()}>
-                  <Text style={{fontSize:16,color: 'black'}}>Sort by </Text>
-                  <AntDesign name='caretright' style={{color:"black",paddingLeft:'80%'}} size={10}/>
+                 <View style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between',width:'80%',paddingRight:20}}>
+                 <Text style={{fontSize:16,color: 'black'}}>Sort by </Text>
+                  <AntDesign name='caretright' style={{color:"black",}} size={10}/>
+                 </View>
                 </TouchableOpacity>                                              
                                               
                 {/* Modal for sortby section starts here */}
@@ -149,14 +153,14 @@ const Defaultlist = () => {
 
         {/* View for main content starts here */}
 
-          <View style={{backgroundColor:"steelblue",height:"100%",alignItems:"center",}}>
+          <View style={{backgroundColor:Colors.primary,height:"100%",alignItems:"center",}}>
             <View style={{flex:1,flexDirection:"column"}}>
               <Ionicons name='musical-notes-outline'style={{color:"white",alignSelf:"auto",marginTop:137,marginLeft:100,marginRight:100}} size={90} />
-              <Text style={{color:"white",fontSize:17,marginLeft:85,marginRight:85,paddingTop:10}}>No music found</Text>
+              <Text style={{color:"white",fontSize:17,alignSelf:'center'}}>No music found</Text>
               <View style={{paddingTop:40,alignItems:"center",}}>
                 <TouchableOpacity>
                   <View style={{borderColor:"white",borderRadius:4,height:40,justifyContent:"center",borderWidth:1}}>
-                    <Text style={{fontSize:18,color:"white"}}>    Add songs    </Text>
+                    <Text style={{fontSize:18,color:"white",alignSelf:'center',padding:15}}>Add songs</Text>
                   </View>
                 </TouchableOpacity>
               </View>
@@ -177,9 +181,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     height: '40%',
     position: 'absolute',
-    bottom:0,
-    top:50 ,
-    left:140,
+    borderRadius:4,
+    top:10 ,
+    right:5,
     alignItems: 'flex-start',
     paddingLeft:'10%',
     justifyContent: 'center',
@@ -193,9 +197,9 @@ sortbyModal: {
   backgroundColor: 'white',
   height: '70%',
   position: 'absolute',
-  bottom:0,
-  top:50 ,
-  left:140,
+  borderRadius:4,
+  top:10 ,
+  right:5,
   alignItems: 'flex-start',
   paddingLeft:'10%',
   justifyContent: 'center',

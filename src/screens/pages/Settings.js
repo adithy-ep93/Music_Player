@@ -11,6 +11,8 @@ import TextTile  from '../../components/text_tile';
 import DividerTile from '../../components/divider';
 import CheckBoxTile from '../../components/checkbox_tile';
 
+import Colors from '../../config/colors';
+
 
 
 
@@ -24,8 +26,8 @@ const Settings = () => {
 
   
 return (
-    <View style={{backgroundColor:'#4682B4', height:'100%', width:'100%',flex:1}} >
- <View style={{backgroundColor:'#4169E1'}}> 
+    <View style={{backgroundColor:Colors.primary, height:'100%', width:'100%',flex:1}} >
+ <View style={{backgroundColor:Colors.primary}}> 
                   <View style={styles.headerContainer}>
                     <TouchableOpacity onPress={()=> navigation.goBack(null)}>
                     <MaterialIcons name="arrow-back" size={20} color="#fff"/></TouchableOpacity>
@@ -42,7 +44,7 @@ return (
    
      
     <TouchableOpacity onPress={() => { setShowModal(!showModal); }}>
-        <View style={{backgroundColor:'#4682B4', width:'100%'}}>
+        <View style={{backgroundColor:Colors.primary, width:'100%'}}>
           <View style={styles.switch}>
         <View style={{marginTop:20}}>
             <Text style={styles.text}>Desktop Irc</Text>
@@ -85,7 +87,7 @@ return (
  
       {/* Timeformate Swich */}
       <TouchableOpacity  onPress={() => { setTimeModal(!timeModal); }}>
-      <View style={{backgroundColor:'#4682B4', width:'100%'}}>
+      <View style={{backgroundColor:Colors.primary, width:'100%'}}>
           <View style={styles.check}>
               <View style={{marginTop:20}}>
                   <Text style={styles.text}>Time format</Text>
@@ -104,7 +106,7 @@ return (
         {/* track playlist Click */}
 
         <TouchableOpacity  onPress={() => { setTrackModal(!trackModal); }} >
-      <View style={{backgroundColor:'#4682B4', width:'100%'}}>
+      <View style={{backgroundColor:Colors.primary, width:'100%'}}>
           <View style={styles.check}>
               <View style={{marginTop:20}}>
                   <Text style={styles.text}>Smart playlist track limit</Text>
@@ -245,10 +247,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     height: 55,
-    backgroundColor:'#4169E1',
+    backgroundColor:Colors.primary,
     alignItems: 'center',
     paddingBottom: 5,
     paddingLeft: 15,
+    elevation:5
     },
  headerHeading: {
             fontSize: 20,
@@ -285,7 +288,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     height: 47,
-    backgroundColor: '#4682B4',
+    backgroundColor: Colors.primary,
     paddingLeft: 5,
     marginBottom:20,
    
@@ -317,7 +320,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     height: 47,
-    backgroundColor: '#4682B4',
+    backgroundColor: Colors.primary,
     paddingLeft: 5,
     marginBottom:20,
    

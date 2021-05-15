@@ -7,7 +7,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
 import OptionCard from '../../components/option_card';
 import Modal from 'react-native-modal';
-
+import Colors from '../../config/colors';
 
 import Divider from '../../components/divider'
 import { ScrollView, TouchableWithoutFeedback } from 'react-native-gesture-handler';
@@ -22,131 +22,140 @@ const Folder = () => {
   
   
   return (
-    <View style={styles.container}>
+    <View style={{backgroundColor:Colors.primary, height:'100%'}}>
+        <View style={styles.container}>
          
             
-            <View style={{backgroundColor:'#4169E1'}}>
-              <View style={styles.headerContainer}>
-                <TouchableWithoutFeedback onPress={()=> navigation.goBack(null)}>
-                <MaterialIcons name="arrow-back" size={20} color="#fff"/></TouchableWithoutFeedback>
-                <View style={styles.innerContainer}>
-                    <View style={styles.nameContainer}>
-                    <Text style={styles.headerHeading} >FOLDER</Text></View></View>
-                <TouchableWithoutFeedback><FontAwesome name="search" size={20} color="#fff"/></TouchableWithoutFeedback>
-                <TouchableWithoutFeedback   onPress={() => setOptionButtonState(true)} >
-                    <Entypo name="dots-three-vertical" size={20} color="#fff" style={{marginRight:16}}/>
-                    </TouchableWithoutFeedback>
+         <View style={{backgroundColor:Colors.primary}}>
+           <View style={styles.headerContainer}>
+             <TouchableWithoutFeedback onPress={()=> navigation.goBack(null)}>
+             <MaterialIcons name="arrow-back" size={20} color="#fff"/></TouchableWithoutFeedback>
+             <View style={styles.innerContainer}>
+                 <View style={styles.nameContainer}>
+                 <Text style={styles.headerHeading} >Folder</Text></View></View>
+             <TouchableWithoutFeedback onPress={()=> navigation.navigate("Searchlibrary")}><FontAwesome name="search" size={20} color="#fff"/></TouchableWithoutFeedback>
+             <TouchableWithoutFeedback   onPress={() => setOptionButtonState(true)} >
+                 <Entypo name="dots-three-vertical" size={20} color="#fff" style={{marginRight:16}}/>
+                 </TouchableWithoutFeedback>
+           </View>
+          </View> 
+  
+
+
+
+     {/* body */}
+ {/* 1st row */}
+     <Pressable style={{ backgroundColor:Colors.primary, }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }}  
+    //  onPress={() => navigation.navigate('Download')}  
+     >
+         <View style={{ width: '100%', height: 70, flexDirection: 'row' }}>
+             <View style={styles.circle}>
+                 <Entypo name="folder" size={35} color="#fff"/>
               </View>
-             </View> 
-     
-
-
-
-        {/* body */}
-    {/* 1st row */}
-        <Pressable style={{ backgroundColor: '#87CEFA', }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }}  onPress={() => navigation.navigate('Download')}  >
-            <View style={{ width: '100%', height: 70, flexDirection: 'row' }}>
-                <View style={styles.circle}>
-                    <Entypo name="folder" size={35} color="#fff"/>
+             <View style={{ flexDirection: 'row', flex: 1, justifyContent: 'space-between', paddingRight: 20 }}>
+                 <View style={styles.leftcontainer}>
+                     <Text style={styles.maintext}>Download</Text>
+                     <Text style={{ color: 'grey' }}>/storage/0/Download</Text>
                  </View>
-                <View style={{ flexDirection: 'row', flex: 1, justifyContent: 'space-between', paddingRight: 20 }}>
-                    <View style={styles.leftcontainer}>
-                        <Text style={styles.maintext}>Download</Text>
-                        <Text style={{ color: 'grey' }}>/storage/0/Download</Text>
-                    </View>
 
-                        <View style={{ justifyContent: 'center',}}>
-                                <View style={{flexDirection:'row'}}>
-                                <Text style={styles.right}>5 songs</Text> 
-                                <TouchableOpacity>
-                                <Entypo name="dots-three-vertical" size={20} color="#fff"/>
-                                </TouchableOpacity>
-                                </View>
-                        </View>
-                </View>
-            </View>
-            <Divider/>
-        </Pressable>
+                     <View style={{ justifyContent: 'center',}}>
+                             <View style={{flexDirection:'row'}}>
+                             <Text style={styles.right}>5 songs</Text> 
+                             <TouchableOpacity>
+                             <Entypo name="dots-three-vertical" size={20} color="#fff"/>
+                             </TouchableOpacity>
+                             </View>
+                     </View>
+             </View>
+         </View>
+         <Divider/>
+     </Pressable>
 
-  {/* 2nd row */}
-        <Pressable style={{ backgroundColor: '#87CEFA', }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }} onPress={() => navigation.navigate('Music')}  >
-            <View style={{ width: '100%', height: 70, flexDirection: 'row' }}>
-                <View style={styles.circle}>
-                <Entypo name="folder" size={35} color="#fff"/>
+{/* 2nd row */}
+     <Pressable style={{ backgroundColor: Colors.primary, }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }} 
+    //  onPress={() => navigation.navigate('Music')}  
+     >
+         <View style={{ width: '100%', height: 70, flexDirection: 'row' }}>
+             <View style={styles.circle}>
+             <Entypo name="folder" size={35} color="#fff"/>
+              </View>
+             <View style={{ flexDirection: 'row', flex: 1, justifyContent: 'space-between', paddingRight: 20 }}>
+                 <View style={styles.leftcontainer}>
+                     <Text style={styles.maintext}>Music</Text>
+                     <Text style={{ color: 'grey' }}>/data/hw_init../Music</Text>
                  </View>
-                <View style={{ flexDirection: 'row', flex: 1, justifyContent: 'space-between', paddingRight: 20 }}>
-                    <View style={styles.leftcontainer}>
-                        <Text style={styles.maintext}>Music</Text>
-                        <Text style={{ color: 'grey' }}>/data/hw_init../Music</Text>
-                    </View>
 
-                        <View style={{ justifyContent: 'center',}}>
-                                <View style={{flexDirection:'row'}}>
-                                <Text style={styles.right}>1 songs</Text> 
-                                <Entypo name="dots-three-vertical" size={20} color="#fff"/>
-                                </View>
-                        </View>
-                </View>
-            </View>
-            <Divider/>
-        </Pressable>
+                     <View style={{ justifyContent: 'center',}}>
+                             <View style={{flexDirection:'row'}}>
+                             <Text style={styles.right}>1 songs</Text> 
+                             <Entypo name="dots-three-vertical" size={20} color="#fff"/>
+                             </View>
+                     </View>
+             </View>
+         </View>
+         <Divider/>
+     </Pressable>
 
 
-        {/* 3rd row */}
-        <Pressable style={{ backgroundColor: '#87CEFA', }} android_ripple={{ color: 'rgba(0,0,0,0.1)'}} onPress={() => navigation.navigate('Sound')}  >
-            <View style={{ width: '100%', height: 70, flexDirection: 'row' }}>
-                <View style={styles.circle}>
-                <Entypo name="folder" size={35} color="#fff"/>
+     {/* 3rd row */}
+     <Pressable style={{ backgroundColor:Colors.primary, }} android_ripple={{ color: 'rgba(0,0,0,0.1)'}} 
+    //  onPress={() => navigation.navigate('Sound')} 
+      >
+         <View style={{ width: '100%', height: 70, flexDirection: 'row' }}>
+             <View style={styles.circle}>
+             <Entypo name="folder" size={35} color="#fff"/>
+              </View>
+             <View style={{ flexDirection: 'row', flex: 1, justifyContent: 'space-between', paddingRight: 20 }}>
+                 <View style={styles.leftcontainer}>
+                     <Text style={styles.maintext}>Sound</Text>
+                     <Text style={{ color: 'grey' }}>/storage/emu..ed/0/Sound</Text>
                  </View>
-                <View style={{ flexDirection: 'row', flex: 1, justifyContent: 'space-between', paddingRight: 20 }}>
-                    <View style={styles.leftcontainer}>
-                        <Text style={styles.maintext}>Sound</Text>
-                        <Text style={{ color: 'grey' }}>/storage/emu..ed/0/Sound</Text>
-                    </View>
 
-                        <View style={{ justifyContent: 'center',}}>
-                                <View style={{flexDirection:'row'}}>
-                                <Text style={styles.right}>6 songs</Text> 
-                                <Entypo name="dots-three-vertical" size={20} color="#fff"/>
-                                </View>
-                        </View>
-                </View>
-            </View>
-            <Divider/>
-        </Pressable>
+                     <View style={{ justifyContent: 'center',}}>
+                             <View style={{flexDirection:'row'}}>
+                             <Text style={styles.right}>6 songs</Text> 
+                             <Entypo name="dots-three-vertical" size={20} color="#fff"/>
+                             </View>
+                     </View>
+             </View>
+         </View>
+         <Divider/>
+     </Pressable>
 
 {/* 4th row */}
 
-<Pressable style={{ backgroundColor: '#87CEFA', }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }} onPress={() => navigation.navigate('WhatsAppAudio')}  >
-            <View style={{ width: '100%', height: 70, flexDirection: 'row' }}>
-                <View style={styles.circle}>
-                <Entypo name="folder" size={35} color="#fff"/>
-                </View>
-                <View style={{ flexDirection: 'row', flex: 1, justifyContent: 'space-between', paddingRight: 20 }}>
-                    <View style={styles.leftcontainer}>
-                        <Text style={styles.maintext}>WhatsApp Audio</Text>
-                        <Text style={{ color: 'grey' }}>/storage/emu..tsApp Audio</Text>
-                    </View>
+<Pressable style={{ backgroundColor: Colors.primary, }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }} 
+// onPress={() => navigation.navigate('WhatsAppAudio')}  
+>
+         <View style={{ width: '100%', height: 70, flexDirection: 'row' }}>
+             <View style={styles.circle}>
+             <Entypo name="folder" size={35} color="#fff"/>
+             </View>
+             <View style={{ flexDirection: 'row', flex: 1, justifyContent: 'space-between', paddingRight: 20 }}>
+                 <View style={styles.leftcontainer}>
+                     <Text style={styles.maintext}>WhatsApp Audio</Text>
+                     <Text style={{ color: 'grey' }}>/storage/emu..tsApp Audio</Text>
+                 </View>
 
-                        <View style={{ justifyContent: 'center',}}>
-                                <View style={{flexDirection:'row'}}>
-                                <Text style={styles.right}>5 songs</Text> 
-                                <Entypo name="dots-three-vertical" size={20} color="#fff"/>
-                                </View>
-                        </View>
-                </View>
-            </View>
-            <Divider/>
-        </Pressable>
+                     <View style={{ justifyContent: 'center',}}>
+                             <View style={{flexDirection:'row'}}>
+                             <Text style={styles.right}>5 songs</Text> 
+                             <Entypo name="dots-three-vertical" size={20} color="#fff"/>
+                             </View>
+                     </View>
+             </View>
+         </View>
+         <Divider/>
+     </Pressable>
 
 
-                 {/* NewButton */}
-                 <View style={{marginVertical:200}}>
-              <TouchableOpacity  activeOpacity={0.8} style={styles.newIconContainer}  >
-              <Image
-                style={styles.circle1}
-                source={require('../../assets/music/shuffle.jpg')}/>
-                </TouchableOpacity></View>
+              {/* NewButton */}
+              <View style={{marginVertical:200}}>
+           <TouchableOpacity  activeOpacity={0.8} style={styles.newIconContainer}  >
+           <Image
+             style={styles.circle1}
+             source={require('../../assets/music/shuffle.jpg')}/>
+             </TouchableOpacity></View>
 
 
 
@@ -155,46 +164,47 @@ const Folder = () => {
 {/* Optional card */}
 
 
-       
+    
 <View style={styles.optionCardContainer}>
-                {optionButtonState ? <View>
-                    <OptionCard
-                        data={options}
-                        selectedItem={(item) => {
-                            console.log(item)
-                            switch (item) {
-                               case 'Sort by':
-                                setSortModal(true);
-                                    break;
-                            }
-                        }}
-                    />
-                </View> : <View></View>}
-            </View>
- {/* sort modal */}
- <View>
-      <Modal
-            isVisible={sortmodalVisible}
-            animationIn={'fadeIn'}
-            animationOut={'fadeOut'}
-            style={{ margin: 1 }}
-            backdropOpacity={0}
-            onBackdropPress={() => setSortModal(false)}>
-            <View style={styles.optionModal}>
-                <OptionCard
-                data={Sortby}
-                selectedItem={(item) => console.log(item)}
-              />
-            </View>
-          </Modal>
-          </View> 
+             {optionButtonState ? <View>
+                 <OptionCard
+                     data={options}
+                     selectedItem={(item) => {
+                         console.log(item)
+                         switch (item) {
+                            case 'Sort by':
+                             setSortModal(true);
+                                 break;
+                         }
+                     }}
+                 />
+             </View> : <View></View>}
+         </View>
+{/* sort modal */}
+<View>
+   <Modal
+         isVisible={sortmodalVisible}
+         animationIn={'fadeIn'}
+         animationOut={'fadeOut'}
+         style={{ margin: 1 }}
+         backdropOpacity={0}
+         onBackdropPress={() => setSortModal(false)}>
+         <View style={styles.optionModal}>
+             <OptionCard
+             data={Sortby}
+             selectedItem={(item) => console.log(item)}
+           />
+         </View>
+       </Modal>
+       </View> 
 
 
-        
-  
+     
+
+
+ </View>
 
     </View>
-
   )
 };
 
@@ -208,16 +218,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     height: 55,
-    backgroundColor:'#4169E1',
+    backgroundColor:Colors.primary,
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingBottom: 5,
-    paddingLeft: 15
+    paddingLeft: 15,
     },
  headerHeading: {
           fontSize: 20,
           color: '#fff',
-          fontWeight: 'bold',
+          
         },
  nameContainer: {
         marginLeft: 16,
@@ -231,7 +241,7 @@ const styles = StyleSheet.create({
         },
 
  list:{
-        backgroundColor:'#87CEFA'
+        backgroundColor:Colors.primary,
         },
  newIconContainer: {
       position: 'absolute',

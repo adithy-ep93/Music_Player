@@ -8,9 +8,8 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Entypo from 'react-native-vector-icons/Entypo';
 
 import ContactTile from '../../../components/contactTile';
-import Divider from '../../../components/divider'
-import UserData from '../data';
-import { color } from 'react-native-reanimated';
+import Divider from '../../../components/divider';
+import Colors from '../../../config/colors';
 
 const Artists = () => {
 
@@ -19,10 +18,10 @@ const Artists = () => {
   return (
     <View>
         
-        <View style={{backgroundColor:'#87CEFA'}}>
+        <View style={{backgroundColor:Colors.primary}}>
        {/* body */}
            {/* 1st row */}
-        <Pressable style={{ backgroundColor: '#87CEFA', }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }}  onPress={() => navigation.navigate('GenresMusic')}   >
+        <Pressable style={{ backgroundColor: Colors.primary }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }}  onPress={() => navigation.navigate('GenresMusic')}   >
             <View style={{ width: '100%', height: 70, flexDirection: 'row' }}>
                 <View style={styles.squre}>
                 <MaterialCommunityIcons name="violin" size={35} color="#fff"/>
@@ -45,7 +44,7 @@ const Artists = () => {
         </Pressable>
 
           {/* 2 nd row */}
-          <Pressable style={{ backgroundColor: '#87CEFA', }} android_ripple={{ color: 'rgba(0,0,0,0.1)' }}  onPress={() => navigation.navigate('GenresUnknown')}    >
+          <Pressable style={{ backgroundColor: Colors.primary}} android_ripple={{ color: 'rgba(0,0,0,0.1)' }}  onPress={() => navigation.navigate('GenresUnknown')}    >
             <View style={{ width: '100%', height: 70, flexDirection: 'row' }}>
                 <View style={styles.squre}>
                     <MaterialCommunityIcons name="violin" size={35} color="#fff"/>
@@ -75,7 +74,7 @@ const Artists = () => {
             <TouchableOpacity  activeOpacity={0.8} style={styles.newIconContainer}>
               <Image
                 style={styles.circle}
-                source={require('../../../assests/music/shuffle.jpg')}/>
+                source={require('../../../assets/music/shuffle.jpg')}/>
             </TouchableOpacity></View>
        
     </View>
